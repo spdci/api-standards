@@ -18,16 +18,7 @@ info:
     - [DR - V1.0 ]()
 
     Code directory links:
-    - [DisabilityAreaEnum]()
-    - [DisabilityTypeEnum]()
-    - [Functional Limitation Type](https://standards.spdci.org/standards/standards-for-interoperability-interfaces/common-standards-for-interoperability-interfaces/data/code-directory/cd.com.11-functional_limitation_type)
-    - [Functional Severity](https://standards.spdci.org/standards/standards-for-interoperability-interfaces/common-standards-for-interoperability-interfaces/data/code-directory/cd.com.12-functional_severity)
-    - [Occupation](https://standards.spdci.org/standards/v/wip-social-registry-v1.0.0/social-registry/1.-crvs/data/code-directory/cd.sr.04-occupation)
-    
-    Data Objects:
-    - [Member](https://standards.spdci.org/standards/v/wip-social-registry-v1.0.0/social-registry/1.-crvs/data/data-objects/do.sr.03-member)
-    - [DisabilityInfo]()
-    - [TreatingHospital]()
+    - 
 
     Each request is build up of three parts
     - signature 
@@ -509,12 +500,12 @@ paths:
     deprecated: false
 
 
- /registry/sync/get-disability-info:
+ /registry/sync/get-disability-support:
   post: 
-    summary: "/registry/sync/get-disability-info"
+    summary: "/registry/sync/get-disability-support"
     description: |- 
       check if member is registered as disabled
-    operationId: post_reg_get_disability_info
+    operationId: post_reg_get_disability_support
     tags: 
       -  Sync
     requestBody:
@@ -538,7 +529,7 @@ paths:
                   type: object
                   description: The search data using which registry search to be performed
                   oneOf:
-                    - $ref: '#/components/schemas/GetDisabilityInfoRequest'
+                    - $ref: '#/components/schemas/GetDisabilitySupportRequest'
                     - $ref: "#/components/schemas/EncryptedMessage"
               required:
                 - header
@@ -553,7 +544,28 @@ paths:
                       - search
     responses:
         default:
-          $ref: "#/components/schemas/GetDisabilityInfoResponse"
+          description: "support response"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  signature:  
+                    $ref: "#/components/schemas/MsgSignature"
+                  header:
+                    allOf:
+                      - $ref: "#/components/schemas/MsgCallbackHeader_V1.0.0"
+                      - properties:
+                          action:
+                            enum:
+                              - on-search
+                  message:
+                    type: object
+                    oneOf:
+                      - $ref: '#/components/schemas/GetDisabilitySupportResponse'
+                      - $ref: '#/components/schemas/EncryptedMessage'
+                required:
+                  - header
         '401':
           $ref: "#/components/responses/HttpErrorResponse"
         '403':
@@ -607,7 +619,28 @@ paths:
                       - search
     responses:
         default:
-          $ref: "#/components/schemas/DisabledResponse"
+          description: "support response"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  signature:  
+                    $ref: "#/components/schemas/MsgSignature"
+                  header:
+                    allOf:
+                      - $ref: "#/components/schemas/MsgCallbackHeader_V1.0.0"
+                      - properties:
+                          action:
+                            enum:
+                              - on-search
+                  message:
+                    type: object
+                    oneOf:
+                      - $ref: "#/components/schemas/DisabledResponse"
+                      - $ref: '#/components/schemas/EncryptedMessage'
+                required:
+                  - header
         '401':
           $ref: "#/components/responses/HttpErrorResponse"
         '403':
@@ -683,10 +716,10 @@ components:
       $ref: schema/UnSubscribeResponse.yaml
     UnSubscribeStatusReasonCode: 
       $ref: schema/UnSubscribeStatusReasonCode.yaml   
-    GetDisabilityInfoRequest:
-      $ref: dr/GetDisabilityInfoRequest.yaml
-    GetDisabilityInfoResponse:
-      $ref: dr/GetDisabilityInfoResponse.yaml
+    GetDisabilitySupportRequest:
+      $ref: dr/GetDisabilitySupportRequest.yaml
+    GetDisabilitySupportResponse:
+      $ref: dr/GetDisabilitySupportResponse.yaml
     DisabledRequest:
       $ref: dr/DisabledRequest.yaml
     DisabledResponse:

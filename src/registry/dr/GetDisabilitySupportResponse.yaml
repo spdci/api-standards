@@ -38,7 +38,7 @@ properties:
                 @container: "@set" <br>
               type: array
               items:
-                $ref: "../../extensions/dr/DisabilityInfo.yaml"                
+                $ref: "../../extensions/dr/DisabilitySupport.yaml"                
           required: 
             - reg_records
         pagination: 

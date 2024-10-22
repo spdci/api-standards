@@ -25,7 +25,7 @@ properties:
         query: 
           $and: [
             {
-              member.disabled: { $eq: true }
+              disability_status: { $eq: 'Approved' }
             },
             {
               location: { $eq: "central_region" }

@@ -7,80 +7,34 @@ description: |
   @type: "@context" <br>
 example:
   {
-    "@context": {
-      "spdci": "https://schema.spdci.org/extensions/dr/v1/",
-      "social": "https://schema.spdci.org/extensions/social/v1/",
-      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-      "xsd": "http://www.w3.org/2001/XMLSchema#",
-      "owl": "http://www.w3.org/2002/07/owl#",
-      "common": "https://schema.spdci.org/common/v1/"
+    "personal_details": {
+    "identifier": "123456",
+    "name": {
+      "first_name": "John",
+      "last_name": "Doe"
     },
-    "@id": "https://example.org/disabled/123456789",
-    "@type": "spdci:disabled",
-    "spdci:member": {
-      "@type": "social:Member",
-      "spdci:member_identifier": "M123456789",
-      "spdci:name": [
-        {
-          "@type": "common:Name",
-          "surname": "Doe",
-          "given_name": "John",
-          "prefix": "Mr."
-        }
-      ],
-      "spdci:sex": "male",
-      "spdci:birth_date": "1990-04-12T00:00",
-      "spdci:is_disabled": true,
-      "spdci:disability_info": [
-        {
-          "disability_classification": "D",
-          "disability_by_birth": false,
-          "disabled_since": "2010-05-12",
-          "disability_area": "D4",
-          "treatment": {
-            "treating_doctor": {
-                            "identifier_type": "NID",
-                            "identifier_value": "0205202401",
-                            "name": {
-                            "first_name": "Jhon",
-                            "second_name": "",
-                            "surname": "Doe"
-                            },
-                            "sex": "M",
-                            "birth_date": "1980-04-12T00:00",
-                            "death_date": " ",
-                            "address": { },
-                            "phone_number": "",
-                            "email": " "
-                            
-            },
-            "treatment_status": "ongoing",
-            "treatment_start_date": "Sangamon"
-          },
-          "treating_hospital_in_other_state": false,
-          "disability_due_to": "Accident",
-          "disability_limitation_type":"d450",
-          "functional_severity": "Moderate"
-        }
-      ]
+    "date_of_birth": "1990-05-15",
+    "gender": "Male"
     },
-    "spdci:care_giver": {
-      "@type": "social:Person",
-      "spdci:identifier": [
-        {
-          "@type": "common:Identifier",
-          "identifier_type": "NationalID",
-          "identifier_value": "987654321"
-        }
-      ],
-      "spdci:name": [
-        {
-          "@type": "common:Name",
-          "surname": "Smith",
-          "given_name": "Alice",
-          "prefix": "Ms."
-        }
-      ]
-    },
-    "spdci:relationship_type": "parent"
+    "disability_status": "Approved",
+    "disability_details": [
+      {
+        "impairment_type": "Physical",
+        "impairment_level": "Severe",
+        "impairment_cause": "Accident",
+        "age_on_set": "Working age"
+      }
+    ],
+    "disability_support": [
+      {
+        "support_needed": "Needed",
+        "support_type": "Personal Assistant",
+        "support_intensity": "High"
+      },
+    ],
+    "transport_requirement": "Adaptable vehical",
+    "housing_type": "Social housing",
+    "registration_date": "2023-01-10T00:00:00Z",
+    "last_updated": "2023-09-20T00:00:00Z"
+
   }

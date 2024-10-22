@@ -18,16 +18,7 @@ info:
     - [DR - V1.0 ]()
 
     Code directory links:
-    - [DisabilityAreaEnum]()
-    - [DisabilityTypeEnum]()
-    - [Functional Limitation Type](https://standards.spdci.org/standards/standards-for-interoperability-interfaces/common-standards-for-interoperability-interfaces/data/code-directory/cd.com.11-functional_limitation_type)
-    - [Functional Severity](https://standards.spdci.org/standards/standards-for-interoperability-interfaces/common-standards-for-interoperability-interfaces/data/code-directory/cd.com.12-functional_severity)
-    - [Occupation](https://standards.spdci.org/standards/v/wip-social-registry-v1.0.0/social-registry/1.-crvs/data/code-directory/cd.sr.04-occupation)
-
-    Data Objects:
-    - [Member](https://standards.spdci.org/standards/v/wip-social-registry-v1.0.0/social-registry/1.-crvs/data/data-objects/do.sr.03-member)
-    - [DisabilityInfo]()
-    - [TreatingHospital]()
+    - 
 
     Each request is build up of three parts
     - signature 
@@ -501,11 +492,11 @@ paths:
       security:
         - Authorization: []
       deprecated: false
-  /registry/sync/get-disability-info:
+  /registry/sync/get-disability-support:
     post:
-      summary: /registry/sync/get-disability-info
+      summary: /registry/sync/get-disability-support
       description: check if member is registered as disabled
-      operationId: post_reg_get_disability_info
+      operationId: post_reg_get_disability_support
       tags:
         - Sync
       requestBody:
@@ -529,7 +520,7 @@ paths:
                   type: object
                   description: The search data using which registry search to be performed
                   oneOf:
-                    - $ref: '#/components/schemas/GetDisabilityInfoRequest'
+                    - $ref: '#/components/schemas/GetDisabilitySupportRequest'
                     - $ref: '#/components/schemas/EncryptedMessage'
               required:
                 - header
@@ -550,7 +541,28 @@ paths:
         '500':
           $ref: '#/components/responses/HttpErrorResponse'
         default:
-          $ref: '#/components/schemas/GetDisabilityInfoResponse'
+          description: support response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  signature:
+                    $ref: '#/components/schemas/MsgSignature'
+                  header:
+                    allOf:
+                      - $ref: '#/components/schemas/MsgCallbackHeader_V1.0.0'
+                      - properties:
+                          action:
+                            enum:
+                              - on-search
+                  message:
+                    type: object
+                    oneOf:
+                      - $ref: '#/components/schemas/GetDisabilitySupportResponse'
+                      - $ref: '#/components/schemas/EncryptedMessage'
+                required:
+                  - header
       deprecated: false
   /registry/sync/disabled:
     post:
@@ -601,7 +613,28 @@ paths:
         '500':
           $ref: '#/components/responses/HttpErrorResponse'
         default:
-          $ref: '#/components/schemas/DisabledResponse'
+          description: support response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  signature:
+                    $ref: '#/components/schemas/MsgSignature'
+                  header:
+                    allOf:
+                      - $ref: '#/components/schemas/MsgCallbackHeader_V1.0.0'
+                      - properties:
+                          action:
+                            enum:
+                              - on-search
+                  message:
+                    type: object
+                    oneOf:
+                      - $ref: '#/components/schemas/DisabledResponse'
+                      - $ref: '#/components/schemas/EncryptedMessage'
+                required:
+                  - header
       deprecated: false
 components:
   schemas:
@@ -914,36 +947,7 @@ components:
         1. Implementing systems can define schemas.
         2. Based on context, pre defined named queries can also help as part of ExpTemplate construct.
       oneOf:
-        - type: object
-          description: Identifier type and value object
-          properties:
-            type:
-              type: string
-              description: |
-                @context: https://schema.spdci.org/common/v1/QueryTypeEnum.jsonld <br>
-                @type: "QueryType" <br>
-
-                **Notes:**
-                  1. Query types that helps decode query expressions
-                  2. Sample query type enums: "GraphQl", "Sql", "NoSql"
-              example: 'ns:org:QueryType:NoSql'
-            value:
-              type: object
-              description: |
-                @context: https://schema.spdci.org/common/v1/QueryExpression.jsonld <br>
-                @type: "QueryExpression" <br>
-
-                **Notes:**
-                  1. Query expression's syntax / format is determined based on query-type.
-                  2. Query expression as a template with placeholder to pass conditional search parameters
-              example:
-                expression:
-                  query:
-                    $and:
-                      - member.disabled:
-                          $eq: true
-                      - location:
-                          $eq: central_region
+        - $ref: '#/components/schemas/ExpTemplate'
         - $ref: '#/components/schemas/IdentifierTypeValue'
         - $ref: '#/components/schemas/ExpPredicateWithConditionList'
     NotifyEventRequest:
@@ -1345,63 +1349,27 @@ components:
                         @context: https://schema.spdci.org/extensions/dr/v1/DisabledPerson.jsonld <br>
                         @type: "@context" <br>
                       example:
-                        '@context':
-                          spdci: 'https://schema.spdci.org/extensions/dr/v1/'
-                          social: 'https://schema.spdci.org/extensions/social/v1/'
-                          rdfs: 'http://www.w3.org/2000/01/rdf-schema#'
-                          xsd: 'http://www.w3.org/2001/XMLSchema#'
-                          owl: 'http://www.w3.org/2002/07/owl#'
-                          common: 'https://schema.spdci.org/common/v1/'
-                        '@id': 'https://example.org/disabled/123456789'
-                        '@type': 'spdci:disabled'
-                        'spdci:member':
-                          '@type': 'social:Member'
-                          'spdci:member_identifier': M123456789
-                          'spdci:name':
-                            - '@type': 'common:Name'
-                              surname: Doe
-                              given_name: John
-                              prefix: Mr.
-                          'spdci:sex': male
-                          'spdci:birth_date': '1990-04-12T00:00'
-                          'spdci:is_disabled': true
-                          'spdci:disability_info':
-                            - disability_classification: D
-                              disability_by_birth: false
-                              disabled_since: '2010-05-12'
-                              disability_area: D4
-                              treatment:
-                                treating_doctor:
-                                  identifier_type: NID
-                                  identifier_value: '0205202401'
-                                  name:
-                                    first_name: Jhon
-                                    second_name: ''
-                                    surname: Doe
-                                  sex: M
-                                  birth_date: '1980-04-12T00:00'
-                                  death_date: ' '
-                                  address: {}
-                                  phone_number: ''
-                                  email: ' '
-                                treatment_status: ongoing
-                                treatment_start_date: Sangamon
-                              treating_hospital_in_other_state: false
-                              disability_due_to: Accident
-                              disability_limitation_type: d450
-                              functional_severity: Moderate
-                        'spdci:care_giver':
-                          '@type': 'social:Person'
-                          'spdci:identifier':
-                            - '@type': 'common:Identifier'
-                              identifier_type: NationalID
-                              identifier_value: '987654321'
-                          'spdci:name':
-                            - '@type': 'common:Name'
-                              surname: Smith
-                              given_name: Alice
-                              prefix: Ms.
-                        'spdci:relationship_type': parent
+                        personal_details:
+                          identifier: '123456'
+                          name:
+                            first_name: John
+                            last_name: Doe
+                          date_of_birth: '1990-05-15'
+                          gender: Male
+                        disability_status: Approved
+                        disability_details:
+                          - impairment_type: Physical
+                            impairment_level: Severe
+                            impairment_cause: Accident
+                            age_on_set: Working age
+                        disability_support:
+                          - support_needed: Needed
+                            support_type: Personal Assistant
+                            support_intensity: High
+                        transport_requirement: Adaptable vehical
+                        housing_type: Social housing
+                        registration_date: '2023-01-10T00:00:00Z'
+                        last_updated: '2023-09-20T00:00:00Z'
                 required:
                   - reg_record_type
                   - reg_records
@@ -1731,7 +1699,7 @@ components:
         - rjct.subscription_code.invalid
         - rjct.requester.invalid
         - rjct.event.already_unsubscribed
-    GetDisabilityInfoRequest:
+    GetDisabilitySupportRequest:
       type: object
       description: gets all disabilities information about a member
       properties:
@@ -1742,7 +1710,7 @@ components:
       required:
         - transaction_id
         - disabled_criteria
-    GetDisabilityInfoResponse:
+    GetDisabilitySupportResponse:
       type: object
       description: Response to search request. Multiple repsonses for each page can be pushed to the caller as an implementation!
       properties:
@@ -1789,19 +1757,28 @@ components:
                         @context: https://schema.spdci.org/extensions/dr/v1/DisabledPerson.jsonld <br>
                         @type: "@context" <br>
                       example:
-                        - disability_type: Visual
-                          disability_by_birth: false
-                          disabled_since: '2010-05-12'
-                          disability_area: Vision
-                          hospital:
-                            name: Central Eye Hospital
-                            state: Illinois
-                            district: Sangamon
-                            department: Ophthalmology
-                          treating_hospital_in_other_state: false
-                          disability_due_to: Accident
-                          disability_limitation_type: Partial
-                          functional_severity: Moderate
+                        - id: DisabilitySupport_001
+                          type: DisabilitySupport
+                          label: DR_Person
+                          human_assistance:
+                            - id: HumanAssistance_001
+                              type: HumanAssistance
+                              assistance_type: Basic Activity
+                              intensity: Daily
+                              support_status: Needed
+                              caregiver:
+                                id: Person_001
+                                name: John Doe
+                                identifier: '12345'
+                              relationship: Parent
+                              registration_date: '2024-01-15T10:00:00Z'
+                              last_updated: '2024-09-20T12:30:00Z'
+                          assistive_technology: []
+                          housing_support: []
+                          medical_care: []
+                          animal_assistance: []
+                          registration_date: '2023-05-20T09:00:00Z'
+                          last_updated: '2024-10-01T11:15:00Z'
                 required:
                   - reg_records
               pagination:
@@ -2150,8 +2127,8 @@ components:
             expression:
               query:
                 $and:
-                  - member.disabled:
-                      $eq: true
+                  - disability_status:
+                      $eq: Approved
                   - location:
                       $eq: central_region
     FileInfo:
