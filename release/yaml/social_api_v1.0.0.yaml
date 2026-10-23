@@ -16,14 +16,14 @@ info:
     3. Request status check: The request status checking APIs implement to check status of request sent in any above APIs
 
     Gitbook reference link :
-    - [Social Registry - V1.0 ](https://standards.spdci.org/standards/wip-social-registry-v1.0.0)
+    - [Social Registry - V1.0 ](https://standards.spdci.org/standards/dci-standards/wip-social-registry-v1.0.0)
 
     Code directory links:
     - [Identifiers](https://schema.spdci.org/core/v1/code/IdentifierTypeEnum.jsonld)
     - [Marital Status](https://schema.spdci.org/core/v1/code/MaritalStatusEnum.jsonld)
     - [Sex](https://schema.spdci.org/core/v1/code/SexCategoryEnum.jsonld)
-    - [Relationship Type](https://schema.spdci.org/v1/code/RelationshipTypeEnum.jsonld)   
-    - [Disability Type](https://schema.spdci.org/v1/code/DisabilityTypeEnum.jsonld)
+    - [Relationship Type](https://schema.spdci.org/core/v1/code/RelationshipTypeEnum.jsonld)   
+    - [Disability Type](https://schema.spdci.org/core/v1/code/DisabilityTypeEnum.jsonld)
     - [Functional Limitation Type](https://schema.spdci.org/core/v1/code/FunctionalLimitationType.jsonld)
     - [Functional Severity](https://schema.spdci.org/core/v1/code/FunctionalSeverityEnum.jsonld)
     - [Education Level](https://schema.spdci.org/core/v1/code/EducationCode.jsonld)
@@ -32,7 +32,7 @@ info:
     - [Occupation](https://schema.spdci.org/core/v1/code/OccupationEnum.jsonld)
 
     Data Objects:
-    - [Person](https://schema.spdci.org/extensions/social/v1/data/Person.jsonld)
+    - [Person](https://schema.spdci.org/extensions/social/v1/data/SRPerson.jsonld)
     - [Group](https://schema.spdci.org/extensions/social/v1/data/Group.jsonld) 
     - [Member](https://schema.spdci.org/extensions/social/v1/data/Member.jsonld)
     - [RelatedPerson](https://schema.spdci.org/core/v1/data/RelatedPerson.jsonld)
@@ -346,7 +346,7 @@ paths:
                   $ref: '#/components/schemas/MsgSignature'
                 header:
                   allOf:
-                    - $ref: '#/components/schemas/MsgHeader_V1.0.0'
+                    - $ref: '#/components/schemas/MsgCallbackHeader_V1.0.0'
                     - properties:
                         action:
                           enum:
@@ -511,7 +511,7 @@ paths:
                   $ref: '#/components/schemas/MsgSignature'
                 header:
                   allOf:
-                    - $ref: '#/components/schemas/MsgHeader_V1.0.0'
+                    - $ref: '#/components/schemas/MsgCallbackHeader_V1.0.0'
                     - properties:
                         action:
                           enum:
@@ -596,6 +596,7 @@ paths:
           $ref: '#/components/responses/HttpErrorResponse'
         default:
           description: Successful response
+          $ref: '#/components/responses/Response'
       security:
         - Authorization: []
       deprecated: false
@@ -840,7 +841,7 @@ components:
                     type: object
                     description: |
                       The "Group" object contains fields expected in response of search
-                      @context: https://schema.spdci.org/extensions/social/v1/Group.jsonld <br>
+                      @context: https://schema.spdci.org/extensions/social/v1/data/Group.jsonld <br>
                       @type: "Group" <br>
                       @container: "@set" <br> 
                     example:
@@ -1168,7 +1169,7 @@ components:
                   reg_record_type:
                     type: string
                     description: |
-                      @context: https://schema.spdci.org/extensions/social/v1/SRPerson.jsonld <br>
+                      @context: https://schema.spdci.org/extensions/social/v1/data/SRPerson.jsonld <br>
                       @type: "RegistryRecordType" <br>
 
                       **Notes:**
@@ -1180,7 +1181,7 @@ components:
                   reg_records:
                     description: |
                       The "Entity" object contains fields expected in response of search
-                      @context: https://schema.spdci.org/extensions/social/v1/Group.jsonld <br>
+                      @context: https://schema.spdci.org/extensions/social/v1/data/Group.jsonld <br>
                       @type: "Group" <br>
                       @container: "@set" <br>
                     type: array
@@ -1190,7 +1191,7 @@ components:
                         1. Attributes of a group to create fetch records, create verifiable credentials or use in search criteria.
                         3. Allows Country/Registry specific implementation extensions using Attribute Name/Value pairs.
 
-                        @context: https://schema.spdci.org/extensions/social/v1/Group.jsonld <br>
+                        @context: https://schema.spdci.org/extensions/social/v1/data/Group.jsonld <br>
                         @type: "@context" <br>
                       example:
                         '@context':
@@ -1823,7 +1824,7 @@ components:
                               reg_type:
                                 type: string
                                 description: |
-                                  @context: https://schema.spdci.org/common/v1/RegistryType.jsonld <br>
+                                  @context: https://schema.spdci.org/common/v1/api-schemas/RegistryType.jsonld <br>
                                   @type: "RegistryType" <br>
 
                                   **Notes:**
@@ -1834,7 +1835,7 @@ components:
                               reg_record_type:
                                 type: string
                                 description: |
-                                  @context: https://schema.spdci.org/extensions/ibr/v1/Member.jsonld <br>
+                                  @context: https://schema.spdci.org/extensions/ibr/v1/data/Member.jsonld <br>
                                   @type: "RegistryRecordType" <br>
 
                                   **Notes:**
@@ -1846,7 +1847,7 @@ components:
                               reg_records:
                                 description: |
                                   The "Beneficiary" object contains fields expected in response of search
-                                  @context: https://schema.spdci.org/extensions/ibr/v1/Beneficiary.jsonld <br>
+                                  @context: https://schema.spdci.org/extensions/ibr/v1/data/Beneficiary.jsonld <br>
                                   @type: "@context" <br>
                                   @container: "@set" <br>
                                 type: array
@@ -1856,7 +1857,7 @@ components:
                                     1. Attributes of a person to create fetch records, create verifiable credentials or use in search criteria.
                                     3. Allows Country/Registry specific implementation extensions using Attribute Name/Value pairs.
 
-                                    @context: https://schema.spdci.org/extensions/ibr/v1/Beneficiary.jsonld <br>
+                                    @context: https://schema.spdci.org/extensions/ibr/v1/data/Beneficiary.jsonld <br>
                                     @type: "@context" <br>
                                   example:
                                     '@context':
@@ -1940,7 +1941,7 @@ components:
                           description: |
                             1. Attributes of a person to create fetch records, create verifiable credentials or use in search criteria.
                             2. Allows Country/Registry specific implementation extensions using Attribute Name/Value pairs.
-                            @context: https://schema.spdci.org/extensions/ibr/v1/Beneficiary.jsonld <br>
+                            @context: https://schema.spdci.org/extensions/ibr/v1/data/Beneficiary.jsonld <br>
                             @type: "@context" <br>   
                           items:
                             $ref: '#/paths/~1registry~1txn~1on-status/post/requestBody/content/application~1json/schema/properties/message/oneOf/0/properties/txnstatus_response/properties/txn_status/anyOf/0/properties/search_response/items/properties/data/properties/reg_records/items'

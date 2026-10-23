@@ -37,7 +37,7 @@ properties:
             reg_records:
               description: |
                 The "Member" object contains fields expected in response of search
-                @context: https://schema.spdci.org/extensions/ess/v1/Member.jsonld <br>
+                @context: https://schema.spdci.org/extensions/ess/v1/data/Member.jsonld <br>
                 @type: "@context" <br>
                 @container: "@set" <br>
               type: array

@@ -46,7 +46,7 @@
           },
           "notify_record_type": "spdci-extensions-dci:Person",
           "authorize": {
-            "@context": "https://standards.spdci.org/schemas/Authorize",
+            "@context": "https://schema.spdci.org/common/v1/api-schemas/Authorize.jsonld",
             "@type": "Authorize",
             "ts": {
               "$ref": "#/components/schemas/DateTime"

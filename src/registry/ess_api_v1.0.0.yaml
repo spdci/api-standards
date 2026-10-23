@@ -201,7 +201,7 @@ paths:
                     enum:
                       - search
     responses:
-        '200':
+        default:
           $ref: "#/components/responses/Response"
         '401':
           $ref: "#/components/responses/HttpErrorResponse"
@@ -254,7 +254,7 @@ paths:
                     enum:
                       - on-search
     responses:
-        '200':
+        default:
           $ref: "#/components/responses/Response"
         '401':
           $ref: "#/components/responses/HttpErrorResponse"
@@ -308,7 +308,7 @@ paths:
                     enum:
                       - subscribe
     responses:
-        '200':
+        default:
           $ref: "#/components/responses/Response"
         '401':
           $ref: "#/components/responses/HttpErrorResponse"
@@ -338,7 +338,7 @@ paths:
                   $ref: "#/components/schemas/MsgSignature"
                 header:
                   allOf:
-                    - $ref: "#/components/schemas/MsgHeader_V1.0.0"
+                    - $ref: "#/components/schemas/MsgCallbackHeader_V1.0.0"
                     - properties:
                         action:
                           enum:
@@ -361,7 +361,7 @@ paths:
                     enum:
                       - on-subscribe
     responses:
-        '200':
+        default:
           $ref: "#/components/responses/Response"
         '401':
           $ref: "#/components/responses/HttpErrorResponse"
@@ -412,7 +412,7 @@ paths:
                     enum:
                       - notify
     responses:
-        '200':
+        default:
           $ref: "#/components/responses/Response"
         '401':
           $ref: "#/components/responses/HttpErrorResponse"
@@ -466,7 +466,7 @@ paths:
                     enum:
                       - unsubscribe
     responses:
-        '200':
+        default:
           $ref: "#/components/responses/Response"
         '401':
           $ref: "#/components/responses/HttpErrorResponse"
@@ -496,7 +496,7 @@ paths:
                   $ref: "#/components/schemas/MsgSignature"
                 header:
                   allOf:
-                    - $ref: "#/components/schemas/MsgHeader_V1.0.0"
+                    - $ref: "#/components/schemas/MsgCallbackHeader_V1.0.0"
                     - properties:
                         action:
                           enum:
@@ -518,7 +518,7 @@ paths:
                     enum:
                       - on-unsubscribe
     responses:
-        '200':
+        default:
           $ref: "#/components/responses/Response"
         '401':
           $ref: "#/components/responses/HttpErrorResponse"
@@ -573,7 +573,7 @@ paths:
                     enum:
                       - txn-status
     responses:
-        '200':
+        default:
           $ref: "#/components/responses/Response"
         '401':
           $ref: "#/components/responses/HttpErrorResponse"
@@ -625,7 +625,7 @@ paths:
                     enum:
                       - txn-on-status
     responses:
-        '200':
+        default:
           $ref: "#/components/responses/Response"
         '401':
           $ref: "#/components/responses/HttpErrorResponse"
@@ -663,7 +663,7 @@ paths:
                   $ref: "#/components/schemas/MsgSignature"
                 header:
                   allOf:
-                    - $ref: "#/components/schemas/MsgSyncHeader_V1.0.0"
+                    - $ref: "#/components/schemas/MsgHeader_V1.0.0"
                     - properties:
                         action:
                           enum:
@@ -678,7 +678,7 @@ paths:
                 - header
                 - message
     responses:
-        '200':
+        default:
           description: "Registry search response"
           content:
             application/json:
@@ -714,7 +714,7 @@ paths:
   post: 
     summary: "/registry/sync/check-enrollment"
     description: |- 
-      check status of a person if remain enrolled 
+      The /registry/sync/check-enrollment will be implemented by ESS. It checks whether a person remains enrolled and responds immediately.
     operationId: post_reg_check_enrollment
     tags: 
       -  Sync
@@ -730,11 +730,11 @@ paths:
                   $ref: "#/components/schemas/MsgSignature"
                 header:
                   allOf:
-                    - $ref: "#/components/schemas/MsgSyncHeader_V1.0.0"
+                    - $ref: "#/components/schemas/MsgHeader_V1.0.0"
                     - properties:
                         action:
                           enum:
-                            - enrollementstatus
+                            - check-enrollment
                 message:
                   type: object
                   description: The search data using which registry search to be performed
@@ -744,16 +744,74 @@ paths:
               required:
                 - header
                 - message
-        multipart/form-data:
-          schema:
-            allOf:
-              - $ref: "#/components/schemas/FileInfo"
-              - properties:
-                  action:
-                    enum:
-                      - enrollementstatus
     responses:
-        '200':
+        default:
+          description: "Enrollment check response"
+          content:
+            application/json:
+              schema:
+                  type: object
+                  properties:
+                    signature:  
+                      $ref: "#/components/schemas/MsgSignature"
+                    header:
+                      allOf:
+                        - $ref: "#/components/schemas/MsgCallbackHeader_V1.0.0"
+                        - properties:
+                            action:
+                              enum:
+                                - on-check-enrollment
+                    message:
+                      type: object
+                      oneOf:
+                        - $ref: '#/components/schemas/EnrolledResponse'
+                        - $ref: '#/components/schemas/EncryptedMessage'
+                  required:
+                    - header
+        '401':
+          $ref: "#/components/responses/HttpErrorResponse"
+        '403':
+          $ref: "#/components/responses/HttpErrorResponse"
+        '500':
+          $ref: "#/components/responses/HttpErrorResponse"
+    security:
+      - Authorization: [ ]
+    deprecated: false
+ /registry/sync/txn/status:
+  post: 
+    summary: "/registry/sync/txn/status"
+    description: |-
+      The /registry/sync/txn/status will be implemented by ESS. This will check status of reach request using transaction_id and/or reference_id(s).
+    operationId: post_reg_sync_txnstatus
+    tags: 
+      -  Sync
+    requestBody:
+      description: ""
+      required: true
+      content:
+        application/json:
+          schema:
+              type: object
+              properties:
+                signature:  
+                  $ref: "#/components/schemas/MsgSignature"
+                header:
+                  allOf:
+                    - $ref: "#/components/schemas/MsgHeader_V1.0.0"
+                    - properties:
+                        action:
+                          enum:
+                            - txn-status
+                message:
+                  type: object
+                  oneOf:
+                    - $ref: '#/components/schemas/TxnStatusRequest'
+                    - $ref: '#/components/schemas/EncryptedMessage'
+              required:
+                - header
+                - message
+    responses:
+        default:
           description: "Transaction status check response"
           content:
             application/json:
@@ -772,7 +830,7 @@ paths:
                     message:
                       type: object
                       oneOf:
-                        - $ref: '#/components/schemas/EnrolledResponse'
+                        - $ref: '#/components/schemas/TxnStatusResponse'
                         - $ref: '#/components/schemas/EncryptedMessage'
                   required:
                     - header
@@ -782,72 +840,9 @@ paths:
           $ref: "#/components/responses/HttpErrorResponse"
         '500':
           $ref: "#/components/responses/HttpErrorResponse"
+    security:
+      - Authorization: [ ]
     deprecated: false
-
-  /registry/sync/txn/status:
-    post: 
-      summary: "/registry/sync/txn/status"
-      description: |-
-        The /registry/sync/txn/status will be implemented by IBR. This will check status of reach request using transaction_id and/or reference_id(s).
-      operationId: post_reg_sync_txnstatus
-      tags: 
-        -  Sync
-      requestBody:
-        description: ""
-        required: true
-        content:
-          application/json:
-            schema:
-                type: object
-                properties:
-                  signature:  
-                    $ref: "#/components/schemas/MsgSignature"
-                  header:
-                    allOf:
-                      - $ref: "#/components/schemas/MsgHeader_V1.0.0"
-                      - properties:
-                          action:
-                            enum:
-                              - txn-status
-                  message:
-                    type: object
-                    oneOf:
-                      - $ref: '#/components/schemas/TxnStatusRequest'
-                      - $ref: '#/components/schemas/EncryptedMessage'
-                required:
-                  - header
-                  - message
-      responses:
-          '200':
-            description: "Transaction status check response"
-            content:
-              application/json:
-                schema:
-                    type: object
-                    properties:
-                      signature:  
-                        $ref: "#/components/schemas/MsgSignature"
-                      header:
-                        allOf:
-                          - $ref: "#/components/schemas/MsgCallbackHeader_V1.0.0"
-                          - properties:
-                              action:
-                                enum:
-                                  - txn-on-status
-                      message:
-                        type: object
-                        oneOf:
-                          - $ref: '#/components/schemas/TxnStatusResponse'
-                          - $ref: '#/components/schemas/EncryptedMessage'
-                    required:
-                      - header
-          '401':
-            $ref: "#/components/responses/HttpErrorResponse"
-          '403':
-            $ref: "#/components/responses/HttpErrorResponse"
-          '500':
-            $ref: "#/components/responses/HttpErrorResponse"
-      deprecated: false
 
  
 components:
@@ -898,8 +893,6 @@ components:
       $ref: ess/MsgCallbackHeader_V1.0.0.yaml
     MsgHeader_V1.0.0: 
       $ref: ess/MsgHeader_V1.0.0.yaml
-    MsgSyncHeader_V1.0.0: 
-      $ref: ess/MsgSyncHeader_V1.0.0.yaml
     MsgHeaderStatusReasonCode: 
       $ref: ../common/schema/MsgHeaderStatusReasonCode.yaml
     MsgSignature: 

@@ -22,8 +22,8 @@ info:
     - [Identifiers](https://schema.spdci.org/core/v1/code/IdentifierTypeEnum.jsonld)
     - [Marital Status](https://schema.spdci.org/core/v1/code/MaritalStatusEnum.jsonld)
     - [Sex](https://schema.spdci.org/core/v1/code/SexCategoryEnum.jsonld)
-    - [Relationship Type](https://schema.spdci.org/v1/code/RelationshipTypeEnum.jsonld)   
-    - [Disability Type](https://schema.spdci.org/v1/code/DisabilityTypeEnum.jsonld)
+    - [Relationship Type](https://schema.spdci.org/core/v1/code/RelationshipTypeEnum.jsonld)   
+    - [Disability Type](https://schema.spdci.org/core/v1/code/DisabilityTypeEnum.jsonld)
     - [Functional Limitation Type](https://schema.spdci.org/core/v1/code/FunctionalLimitationType.jsonld)
     - [Functional Severity](https://schema.spdci.org/core/v1/code/FunctionalSeverityEnum.jsonld)
     - [Education Level](https://schema.spdci.org/core/v1/code/EducationCode.jsonld)
@@ -218,7 +218,8 @@ paths:
       The /registry/on-search end point to be implemented by SPMIS to receive search results from registry. 
       The registry will send data in format explained in SearchResponse.yaml. The reg_records will contains data 
       that in explained in [Person](https://schema.spdci.org/core/v1/data/Person.jsonld), [Member](https://schema.spdci.org/core/v1/data/Member.jsonld) , [Group](https://schema.spdci.org/core/v1/data/Group.jsonld).
-    tags: 
+    operationId: post_reg_on-search
+    tags:
       -  Async
     requestBody:
       description: ""
@@ -338,7 +339,7 @@ paths:
                   $ref: "#/components/schemas/MsgSignature"
                 header:
                   allOf:
-                    - $ref: "#/components/schemas/MsgHeader_V1.0.0"
+                    - $ref: "#/components/schemas/MsgCallbackHeader_V1.0.0"
                     - properties:
                         action:
                           enum:
@@ -496,7 +497,7 @@ paths:
                   $ref: "#/components/schemas/MsgSignature"
                 header:
                   allOf:
-                    - $ref: "#/components/schemas/MsgHeader_V1.0.0"
+                    - $ref: "#/components/schemas/MsgCallbackHeader_V1.0.0"
                     - properties:
                         action:
                           enum:

@@ -1,6 +1,6 @@
 type: string
 description: |
-  @context: https://schema.spdci.org/extensions/social/v1/SRPerson.jsonld <br>
+  @context: https://schema.spdci.org/extensions/social/v1/data/SRPerson.jsonld <br>
   @type: "RegistryRecordType" <br>
   
   **Notes:**

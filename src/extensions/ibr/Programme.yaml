@@ -3,5 +3,5 @@ description: |
   1. 
   2. 
 
-  @context: https://schema.spdci.org/extensions/ibr/v1/Programme.jsonld <br>
+  @context: https://schema.spdci.org/extensions/ibr/v1/data/Programme.jsonld <br>
   @type: "@context" <br>
