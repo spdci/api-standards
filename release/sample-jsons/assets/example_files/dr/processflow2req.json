@@ -1,30 +1,25 @@
 {
     "signature": "Signature: namespace=\"dci\", kidId=\"SP-System|unique_key_id|ed25519\", algorithm=\"ed25519\", created=\"1691746200\", expires=\"1691832600\", headers=\"(created) (expires) digest\", signature=\"Base64(signing content)\"",
     "header": {
-      "version": "1.0.0",
-      "message_id": "b2a5c6d7-8e9f-4a1b-9d2c-34567890abcd",
-      "message_ts": "2024-08-11T11:00:00.000Z",
-      "action": "get_disability_info",
-      "status": "request",
-      "status_reason_code": "",
-      "status_reason_message": "",
-      "total_count": "1",
-      "completed_count": "",
-      "sender_id": "SP-System",
-      "receiver_id": "DR",
-      "is_msg_encrypted": false,
-      "meta": ""
+        "version": "1.0.0",
+        "message_id": "b2a5c6d7-8e9f-4a1b-9d2c-34567890abcd",
+        "message_ts": "2024-08-11T11:00:00.000Z",
+        "action": "disabled",
+        "total_count": 1,
+        "sender_id": "SP-System",
+        "receiver_id": "DR",
+        "is_msg_encrypted": false,
+        "meta": {}
     },
     "message": {
-      "transaction_id": "txn-abcdef1234",
-      "disabled_criteria": {
-        "query_type": "expression",
-        "query": {
-          "personal_details.member_identifier": {
-          "eq": "ABC451123"
+        "transaction_id": "txn-abcdef1234",
+        "disabled_criteria": {
+            "query_type": "expression",
+            "query": {
+                "personal_details.member_identifier": {
+                    "eq": "ABC451123"
+                }
+            }
         }
-      }
-}
     }
-  }
-  
+}

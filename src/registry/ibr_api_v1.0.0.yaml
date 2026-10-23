@@ -813,7 +813,7 @@ paths:
   post: 
     summary: "/registry/sync/enrolled"
     description: |- 
-      The /registry/sync/enrolled will be implemented by IBR. It returns the programmes a person is enrolled in and responds immediately.
+      The /registry/sync/enrolled will be implemented by IBR. It checks whether a person is enrolled as a beneficiary (enrolled_status yes/no) and responds immediately.
     operationId: post_reg_enrolled
     tags: 
       -  Sync

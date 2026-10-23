@@ -50,9 +50,9 @@ paths:
             schema:
               $ref: "#/components/schemas/OAuth2ClientTokenResponse"
       '400':
-        $ref: "#/components/responses/HttpErrorResponse"
+        $ref: "#/components/responses/OAuth2ErrorResponse"
       '401':
-        $ref: "#/components/responses/HttpErrorResponse"
+        $ref: "#/components/responses/OAuth2ErrorResponse"
       '404':
         $ref: "#/components/responses/HttpErrorResponse"
       '500':
@@ -67,6 +67,8 @@ components:
       $ref: schema/core/OAuth2ClientTokenResponse.yaml
     OidcScope:
       $ref: schema/core/OidcScope.yaml
+    OAuth2ErrorResponse:
+      $ref: schema/core/OAuth2ErrorResponse.yaml
   parameters:
     accept-language:
       $ref: "../common/parameter/accept-language.yaml"
@@ -77,6 +79,12 @@ components:
   responses:
     HttpErrorResponse:
       $ref: "../common/response/HttpErrorResponse.yaml"
+    OAuth2ErrorResponse:
+      description: "OAuth2 error response (RFC 6749 Section 5.2). 400 for invalid_request, invalid_grant, unauthorized_client, unsupported_grant_type, invalid_scope; 401 for invalid_client."
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/OAuth2ErrorResponse"
   securitySchemes:
     Authorization:
       $ref: "../common/security/Authorization.yaml"

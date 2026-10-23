@@ -41,9 +41,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/OAuth2ClientTokenResponse'
         '400':
-          $ref: '#/components/responses/HttpErrorResponse'
+          $ref: '#/components/responses/OAuth2ErrorResponse'
         '401':
-          $ref: '#/components/responses/HttpErrorResponse'
+          $ref: '#/components/responses/OAuth2ErrorResponse'
         '404':
           $ref: '#/components/responses/HttpErrorResponse'
         '500':
@@ -78,21 +78,21 @@ components:
       type: object
       properties:
         access_token:
-          description: Clients to share access_token in x-api-token HTTP header.
+          description: 'Access token. Clients send it as "Authorization: Bearer <access_token>" HTTP header.'
           type: string
           example: 2YotnFZFEjr1zCsicMWpAA
         token_type:
-          description: ''
+          description: Type of the token issued (RFC 6749 Section 7.1). Always bearer.
           type: string
           example: bearer
         expires_in:
           description: 'The lifetime in seconds of the access token.  <br> 1. For example, the value "3600" denotes that the access token will expire in one hour from the time the response was generated. <br> 2. If omitted, the authorization server SHOULD provide the expiration time via other means or document the default value.'
-          type: string
-          example: '36000'
+          type: integer
+          example: 36000
       required:
         - access_token
         - token_type
-      description: ''
+      description: Successful access token response as defined in RFC 6749 Section 5.1.
     OidcScope:
       type: string
       description: 'OIDC complaint auth tokens issued by an authorization service for OAuth2, OIDC complaint clients. <br><br> This is an indicative list: <br> disburse, on-disburse, disburse/status, disburse/on-status, mapper/link, mapper/unlink, etc.,'
@@ -123,6 +123,31 @@ components:
         - mapper/on-link
         - registry/search
         - registry/on-search
+    OAuth2ErrorResponse:
+      type: object
+      description: Error response from the token end point as defined in RFC 6749 Section 5.2.
+      properties:
+        error:
+          type: string
+          description: Error code as defined in RFC 6749 Section 5.2.
+          enum:
+            - invalid_request
+            - invalid_client
+            - invalid_grant
+            - unauthorized_client
+            - unsupported_grant_type
+            - invalid_scope
+          example: invalid_client
+        error_description:
+          type: string
+          description: Human-readable text providing additional information about the error.
+          example: Client authentication failed
+        error_uri:
+          type: string
+          format: uri
+          description: URI identifying a human-readable web page with information about the error.
+      required:
+        - error
   parameters:
     accept-language:
       in: header
@@ -166,6 +191,12 @@ components:
                     message:
                       type: string
                       description: error message
+    OAuth2ErrorResponse:
+      description: 'OAuth2 error response (RFC 6749 Section 5.2). 400 for invalid_request, invalid_grant, unauthorized_client, unsupported_grant_type, invalid_scope; 401 for invalid_client.'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/OAuth2ErrorResponse'
   securitySchemes:
     Authorization:
       type: http
