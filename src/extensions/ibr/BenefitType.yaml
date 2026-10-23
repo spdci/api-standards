@@ -8,5 +8,5 @@ description: |
   5 : Work opportunity <br>
   6 : Insurance
   
-  @context: https://schema.spdci.org/extensions/ibr/v1/BenefitTypeEnum.jsonld <br>
+  @context: https://schema.spdci.org/extensions/ibr/v1/code/BenefitTypeEnum.jsonld <br>
   @type: "@context" <br>

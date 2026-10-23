@@ -2,7 +2,7 @@ openapi: 3.0.3
 info:
   title: Interoperability APIs - Authz
   x-logo:
-    url: 'https://standards.spdci.org/api-documentation/draft/dci-logo.png'
+    url: ./dci-logo.png
     backgroundColor: '#FFFFFF'
     altText: Digital Convergence Initiative
   description: Provide access_token to registered clients/services. Issue OAuth2 compliant authorization token.
@@ -20,7 +20,7 @@ paths:
   /oauth2/client/token:
     post:
       summary: 'AUTHZ-TOKN : /oauth2/client/token'
-      description: '<br> <b>Client integration notes: </b><br> 1. This end point is in compliance with OAuth2 RFC 6749 to authenticate registered confidential clients with grant_type=client_credentials over HTTPS channel. <br> 2. Clients MUST obtain client_id, client_secret as part of client registration. <br> 2. Clients MUST ensure to secure sensitive information e.g, client_secret,  access_token, etc., <br> 3. RFC 6749 section 4.4.3 recommends NO support for refresh access_token. <br> 4. Successfully authenticated clients SHALL receive bearer type access_token. <br> 5. Clients MUST set HTTP "Authorization: Bearer <access_token>" in HTTP header to access any g2p compliant api end points.<br> 6. Rest end points SHALL return <b>http status 401</b> when access_token is invalid or expired.<br>'
+      description: '<br> <b>Client integration notes: </b><br> 1. This end point is in compliance with OAuth2 RFC 6749 to authenticate registered confidential clients with grant_type=client_credentials over HTTPS channel. <br> 2. Clients MUST obtain client credentials (client_id with client_secret, or a registered key pair) as part of client registration. <br> 3. Clients authenticate with ONE of the following methods; implementations MUST support at least one and SHOULD document which they support: <br> a. client_secret_basic: HTTP Basic with client_id / client_secret (RFC 6749 section 2.3.1). <br> b. client_secret_post: client_id and client_secret in the request body (RFC 6749 section 2.3.1). <br> c. private_key_jwt: client_assertion_type and client_assertion in the request body (RFC 7523). <br> d. tls_client_auth: mutual TLS client certificate (RFC 8705), with client_id in the request body. <br> e. Bearer token in the Authorization header, for implementations that already issue a registration or bootstrap token. <br> 4. Clients MUST ensure to secure sensitive information e.g, client_secret, private keys, access_token, etc., <br> 5. RFC 6749 section 4.4.3 recommends NO support for refresh access_token. <br> 6. Successfully authenticated clients SHALL receive bearer type access_token. <br> 7. Clients MUST set HTTP "Authorization: Bearer <access_token>" in HTTP header to access any spdci compliant api end points.<br> 8. Rest end points SHALL return <b>http status 401</b> when access_token is invalid or expired.<br>'
       operationId: post_oauth2_client_token
       parameters:
         - $ref: '#/components/parameters/accept-language'
@@ -40,12 +40,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/OAuth2ClientTokenResponse'
+        '400':
+          $ref: '#/components/responses/OAuth2ErrorResponse'
+        '401':
+          $ref: '#/components/responses/OAuth2ErrorResponse'
         '404':
           $ref: '#/components/responses/HttpErrorResponse'
         '500':
           $ref: '#/components/responses/HttpErrorResponse'
       security:
+        - ClientBasicAuth: []
         - Authorization: []
+        - {}
       deprecated: false
 components:
   schemas:
@@ -55,41 +61,52 @@ components:
         grant_type:
           type: string
           description: Value must be set to client_credentials
+          enum:
+            - client_credentials
           example: client_credentials
         client_id:
           type: string
-          description: The client identifier issued to the client during the registration process described by RFC 6749 Section 2.2.
+          description: The client identifier issued to the client during the registration process described by RFC 6749 Section 2.2. Required for client_secret_post and tls_client_auth; omitted when using HTTP Basic.
           example: '1001'
         client_secret:
           type: string
-          description: client secret shared to clients as part of client registration process or regualar rotation of client_secret.
+          description: Client secret shared with the client during registration or regular rotation. Used only for client_secret_post (RFC 6749 Section 2.3.1).
           example: 7Fjfp0ZBr1KtDRbnfVdmIw
+        client_assertion_type:
+          type: string
+          description: Used only for private_key_jwt (RFC 7523 Section 2.2).
+          enum:
+            - 'urn:ietf:params:oauth:client-assertion-type:jwt-bearer'
+        client_assertion:
+          type: string
+          description: Signed JWT identifying the client. Used only for private_key_jwt (RFC 7523 Section 2.2).
         scope:
           $ref: '#/components/schemas/OidcScope'
       required:
         - grant_type
-        - client_id
-        - client_secret
-      description: Request entity to obtain access token using gant_type = client_credential
+      description: Request entity to obtain access token using grant_type = client_credentials. Which client credential fields are present depends on the client authentication method; see the end point description.
     OAuth2ClientTokenResponse:
       type: object
       properties:
         access_token:
-          description: Clients to share access_token in x-api-token HTTP header.
+          description: 'Access token. Clients send it as "Authorization: Bearer <access_token>" HTTP header.'
           type: string
           example: 2YotnFZFEjr1zCsicMWpAA
         token_type:
-          description: ''
+          description: Type of the token issued (RFC 6749 Section 7.1). Always bearer.
           type: string
           example: bearer
         expires_in:
-          description: 'The lifetime in seconds of the access token.  <br> 1. For example, the value "3600" denotes that the access token will expire in one hour from the time the response was generated. <br> 2. If omitted, the authorization server SHOULD provide the expiration time via other means or document the default value.'
-          type: string
-          example: '36000'
+          description: 'The lifetime in seconds of the access token.  <br> 1. For example, the value "3600" denotes that the access token will expire in one hour from the time the response was generated. <br> 2. If omitted, the authorization server SHOULD provide the expiration time via other means or document the default value. <br> 3. SHOULD be sent as an integer (RFC 6749 Section 5.1). A numeric string is accepted for backward compatibility.'
+          oneOf:
+            - type: integer
+            - type: string
+              pattern: '^[0-9]+$'
+          example: 36000
       required:
         - access_token
         - token_type
-      description: ''
+      description: Successful access token response as defined in RFC 6749 Section 5.1.
     OidcScope:
       type: string
       description: 'OIDC complaint auth tokens issued by an authorization service for OAuth2, OIDC complaint clients. <br><br> This is an indicative list: <br> disburse, on-disburse, disburse/status, disburse/on-status, mapper/link, mapper/unlink, etc.,'
@@ -120,6 +137,31 @@ components:
         - mapper/on-link
         - registry/search
         - registry/on-search
+    OAuth2ErrorResponse:
+      type: object
+      description: Error response from the token end point as defined in RFC 6749 Section 5.2.
+      properties:
+        error:
+          type: string
+          description: Error code as defined in RFC 6749 Section 5.2.
+          enum:
+            - invalid_request
+            - invalid_client
+            - invalid_grant
+            - unauthorized_client
+            - unsupported_grant_type
+            - invalid_scope
+          example: invalid_client
+        error_description:
+          type: string
+          description: Human-readable text providing additional information about the error.
+          example: Client authentication failed
+        error_uri:
+          type: string
+          format: uri
+          description: URI identifying a human-readable web page with information about the error.
+      required:
+        - error
   parameters:
     accept-language:
       in: header
@@ -163,9 +205,19 @@ components:
                     message:
                       type: string
                       description: error message
+    OAuth2ErrorResponse:
+      description: 'OAuth2 error response (RFC 6749 Section 5.2). 400 for invalid_request, invalid_grant, unauthorized_client, unsupported_grant_type, invalid_scope; 401 for invalid_client.'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/OAuth2ErrorResponse'
   securitySchemes:
     Authorization:
       type: http
       scheme: bearer
       bearerFormat: jwt
       description: User/System authenticated access token; (jwt bearer) token returned from implementing system's authentication/token api end points. All systems must implement token api.
+    ClientBasicAuth:
+      type: http
+      scheme: basic
+      description: 'OAuth2 client authentication with HTTP Basic (client_secret_basic, RFC 6749 Section 2.3.1). Username is the client_id and password is the client_secret, both form-url-encoded.'

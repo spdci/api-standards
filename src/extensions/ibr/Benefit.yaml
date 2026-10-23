@@ -2,5 +2,5 @@ type: object
 description: | 
   The Benefit object provide information about benefits
   
-  @context: https://schema.spdci.org/extensions/ibr/v1/Benefit.jsonld <br>
+  @context: https://schema.spdci.org/extensions/ibr/v1/data/Benefit.jsonld <br>
   @type: "@context" <br>

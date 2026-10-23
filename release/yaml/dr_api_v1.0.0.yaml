@@ -16,35 +16,35 @@ info:
     3. Request status check: The request status checking APIs implement to check status of request sent in any above APIs
 
     Gitbook reference link:
-    - [DR - V1.0 ](https://standards.spdci.org/standards/wip-disability-registry)
+    - [DR - V1.0 ](https://standards.spdci.org/standards/dci-standards/wip-disability-registry)
 
     Code directory links:
-    - [Impairment Type](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.01-impairmenttype-functional-limitationtype)
-    - [Impairment Level](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.02-impairmentlevel-functional-limitationslevel)
-    - [Human Assistance Type](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.03-humanassistancetype)
-    - [Support Frequency](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.04-supportfrequency)   
-    - [Support Status](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.05-supportstatusenum)
-    - [Assistive Technology](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.06-assistivetechnologyenum)
-    - [Disability Status](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.07-disabilityonset)
-    - [Impairment Cause](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.08-impairmentcause)
-    - [Transport Requirement](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.9-transportrequirement)
-    - [Housing Type](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.10-housingtype)
-    - [Medical Care](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.11-medicalcareenum)
-    - [Housing Support](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.12-housingsupportenum)
-    - [Animal Assistance](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.13-animalassitanceenum)
-    - [Disability Status](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.14-disabilitystatus)
-    - [Disability Status Level](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.15-disabilitystatuslevel)
+    - [Impairment Type](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.01-impairmenttype-functional-limitationtype)
+    - [Impairment Level](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.02-impairmentlevel-functional-limitationslevel)
+    - [Human Assistance Type](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.03-humanassistancetype)
+    - [Support Frequency](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.04-supportfrequency)   
+    - [Support Status](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.05-supportstatusenum)
+    - [Assistive Technology](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.06-assistivetechnologyenum)
+    - [Disability Status](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.07-disabilityonset)
+    - [Impairment Cause](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.08-impairmentcause-functionallimitationcause)
+    - [Transport Requirement](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.9-transportrequirement)
+    - [Housing Type](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.10-housingtype)
+    - [Medical Care](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.11-medicalcareenum)
+    - [Housing Support](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.12-housingsupportenum)
+    - [Animal Assistance](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.13-animalassitanceenum)
+    - [Disability Status](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.14-disabilitystatus)
+    - [Disability Status Level](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.15-disabilitystatuslevel)
 
     Data Objects:
-    - [PWDPerson](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/data-objects/do.dr.01-pwdperson)
-    - [Disability Details](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/data-objects/do.dr.02-disabilitydetails)
-    - [Disability Support](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/data-objects/do.dr.03-disabilitysupport)
-    - [Human Assistance](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/data-objects/do.dr.04-humanassistance) 
-    - [Assistive Technology](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/data-objects/do.dr.05-assistivetechnology)
-    - [Medical Care](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/data-objects/do.dr.06-medicalcare)
-    - [Housing Support](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/data-objects/do.dr.07-housingsupport)
-    - [Animal Assistance](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/data-objects/do.dr.08-animalassistance)
-    - [Member](https://standards.spdci.org/standards/v/wip-social-registry-v1.0.0/social-registry/1.-crvs/data/data-objects/do.sr.03-member)
+    - [PWDPerson](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/data-objects/do.dr.03-personwithdisability-pwd)
+    - [Disability Details](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/data-objects/do.dr.04-disabilitydetails)
+    - [Disability Support](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/data-objects/do.dr.05-disabilitysupport)
+    - [Human Assistance](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/data-objects/do.dr.06-humanassistance) 
+    - [Assistive Technology](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/data-objects/do.dr.07-assistivetechnology)
+    - [Medical Care](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/data-objects/do.dr.08-medicalcare)
+    - [Housing Support](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/data-objects/do.dr.09-housingsupport)
+    - [Animal Assistance](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/data-objects/do.dr.10-animalassistance)
+    - [Member](https://standards.spdci.org/standards/dci-standards/wip-social-registry-v1.0.0/social-registry/1.-crvs/data/data-objects/do.sr.02-member)
 
 
 
@@ -314,7 +314,7 @@ paths:
                   $ref: '#/components/schemas/MsgSignature'
                 header:
                   allOf:
-                    - $ref: '#/components/schemas/MsgHeader_V1.0.0'
+                    - $ref: '#/components/schemas/MsgCallbackHeader_V1.0.0'
                     - properties:
                         action:
                           enum:
@@ -471,7 +471,7 @@ paths:
                   $ref: '#/components/schemas/MsgSignature'
                 header:
                   allOf:
-                    - $ref: '#/components/schemas/MsgHeader_V1.0.0'
+                    - $ref: '#/components/schemas/MsgCallbackHeader_V1.0.0'
                     - properties:
                         action:
                           enum:
@@ -696,7 +696,7 @@ paths:
                     - properties:
                         action:
                           enum:
-                            - search
+                            - get-disability-support
                 message:
                   type: object
                   description: The search data using which registry search to be performed
@@ -706,14 +706,6 @@ paths:
               required:
                 - header
                 - message
-          multipart/form-data:
-            schema:
-              allOf:
-                - $ref: '#/components/schemas/FileInfo'
-                - properties:
-                    action:
-                      enum:
-                        - search
       responses:
         '401':
           $ref: '#/components/responses/HttpErrorResponse'
@@ -736,7 +728,7 @@ paths:
                       - properties:
                           action:
                             enum:
-                              - on-search
+                              - on-get-disability-support
                   message:
                     type: object
                     oneOf:
@@ -744,6 +736,8 @@ paths:
                       - $ref: '#/components/schemas/EncryptedMessage'
                 required:
                   - header
+      security:
+        - Authorization: []
       deprecated: false
   /registry/sync/get-disability-details:
     post:
@@ -768,7 +762,7 @@ paths:
                     - properties:
                         action:
                           enum:
-                            - search
+                            - get-disability-details
                 message:
                   type: object
                   description: The search data using which registry search to be performed
@@ -778,14 +772,6 @@ paths:
               required:
                 - header
                 - message
-          multipart/form-data:
-            schema:
-              allOf:
-                - $ref: '#/components/schemas/FileInfo'
-                - properties:
-                    action:
-                      enum:
-                        - search
       responses:
         '401':
           $ref: '#/components/responses/HttpErrorResponse'
@@ -808,7 +794,7 @@ paths:
                       - properties:
                           action:
                             enum:
-                              - on-search
+                              - on-get-disability-details
                   message:
                     type: object
                     oneOf:
@@ -816,10 +802,12 @@ paths:
                       - $ref: '#/components/schemas/EncryptedMessage'
                 required:
                   - header
+      security:
+        - Authorization: []
       deprecated: false
   /registry/sync/disabled:
     post:
-      summary: /registry/sync/get-disability-status
+      summary: /registry/sync/disabled
       description: check if member is registered as disabled
       operationId: post_reg_disabled
       tags:
@@ -840,7 +828,7 @@ paths:
                     - properties:
                         action:
                           enum:
-                            - search
+                            - disabled
                 message:
                   type: object
                   description: The search data using which registry search to be performed
@@ -850,14 +838,6 @@ paths:
               required:
                 - header
                 - message
-          multipart/form-data:
-            schema:
-              allOf:
-                - $ref: '#/components/schemas/FileInfo'
-                - properties:
-                    action:
-                      enum:
-                        - search
       responses:
         '401':
           $ref: '#/components/responses/HttpErrorResponse'
@@ -880,7 +860,7 @@ paths:
                       - properties:
                           action:
                             enum:
-                              - on-search
+                              - on-disabled
                   message:
                     type: object
                     oneOf:
@@ -888,6 +868,73 @@ paths:
                       - $ref: '#/components/schemas/EncryptedMessage'
                 required:
                   - header
+      security:
+        - Authorization: []
+      deprecated: false
+  /registry/sync/txn/status:
+    post:
+      summary: /registry/sync/txn/status
+      description: The /registry/sync/txn/status will be implemented by DR. This will check status of reach request using transaction_id and/or reference_id(s).
+      operationId: post_reg_sync_txnstatus
+      tags:
+        - Sync
+      requestBody:
+        description: ''
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                signature:
+                  $ref: '#/components/schemas/MsgSignature'
+                header:
+                  allOf:
+                    - $ref: '#/components/schemas/MsgHeader_V1.0.0'
+                    - properties:
+                        action:
+                          enum:
+                            - txn-status
+                message:
+                  type: object
+                  oneOf:
+                    - $ref: '#/components/schemas/TxnStatusRequest'
+                    - $ref: '#/components/schemas/EncryptedMessage'
+              required:
+                - header
+                - message
+      responses:
+        '401':
+          $ref: '#/components/responses/HttpErrorResponse'
+        '403':
+          $ref: '#/components/responses/HttpErrorResponse'
+        '500':
+          $ref: '#/components/responses/HttpErrorResponse'
+        default:
+          description: Transaction status check response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  signature:
+                    $ref: '#/components/schemas/MsgSignature'
+                  header:
+                    allOf:
+                      - $ref: '#/components/schemas/MsgCallbackHeader_V1.0.0'
+                      - properties:
+                          action:
+                            enum:
+                              - txn-on-status
+                  message:
+                    type: object
+                    oneOf:
+                      - $ref: '#/components/schemas/TxnStatusResponse'
+                      - $ref: '#/components/schemas/EncryptedMessage'
+                required:
+                  - header
+      security:
+        - Authorization: []
       deprecated: false
 components:
   schemas:
@@ -928,7 +975,47 @@ components:
                   reg_record_type:
                     $ref: '#/components/schemas/SearchResponse/properties/search_response/items/properties/data/properties/reg_record_type'
                   reg_records:
-                    $ref: '#/components/schemas/SearchResponse/properties/search_response/items/properties/data/properties/reg_records'
+                    type: object
+                    description: |
+                      The "group" object contains fields expected in response of search
+                      @context: https://schema.spdci.org/extensions/dr/v1/data/DRPerson.jsonld <br>
+                      @type: "DisabledPerson" <br>
+                      @container: "@set" <br> 
+                    example:
+                      type: object
+                      description: |
+                        1. Attributes of a person to create fetch records, create verifiable credentials or use in search criteria.
+
+
+                        @context: https://schema.spdci.org/extensions/dr/v1/data/DRPerson.jsonld <br>
+                        @type: "@context" <br>
+                      example:
+                        personal_details:
+                          identifier: '123456'
+                          name:
+                            first_name: John
+                            last_name: Doe
+                          date_of_birth: '1990-05-15'
+                          gender: Male
+                        disability_status: Approved
+                        disability_level: Severe
+                        disability_details:
+                          - impairment_type: Physical and movement related functions
+                            impairment_level: Severe impairment or difficulty
+                            impairment_cause: Work Accident
+                            age_on_set: Working age
+                        disability_support:
+                          - human_assistance:
+                              frequency: Permanent
+                              type: mobility
+                              support_status: Required
+                        transport_requirement: Adaptable vehical
+                        housing_type: Social housing
+                        programs_enrollments:
+                          - programme_name: financial_assistance
+                            programme_identifier: AD234
+                        registration_date: '2023-01-10T00:00:00Z'
+                        last_updated: '2023-09-20T00:00:00Z'
                 required:
                   - reg_record_type
                   - reg_records
@@ -1221,47 +1308,9 @@ components:
                         4. example: "spdci-extensions-dci:DisabledPerson" 
                     example: 'spdci-extensions-dci:DisabledPerson'
                   reg_records:
-                    type: object
-                    description: |
-                      The "group" object contains fields expected in response of search
-                      @context: https://schema.spdci.org/extensions/dr/v1/DRPerson.jsonld <br>
-                      @type: "DisabledPerson" <br>
-                      @container: "@set" <br> 
-                    example:
-                      type: object
-                      description: |
-                        1. Attributes of a person to create fetch records, create verifiable credentials or use in search criteria.
-
-
-                        @context: https://schema.spdci.org/extensions/dr/v1/DRPerson.jsonld <br>
-                        @type: "@context" <br>
-                      example:
-                        personal_details:
-                          identifier: '123456'
-                          name:
-                            first_name: John
-                            last_name: Doe
-                          date_of_birth: '1990-05-15'
-                          gender: Male
-                        disability_status: Approved
-                        disability_level: Severe
-                        disability_details:
-                          - impairment_type: Physical and movement related functions
-                            impairment_level: Severe impairment or difficulty
-                            impairment_cause: Work Accident
-                            age_on_set: Working age
-                        disability_support:
-                          - human_assistance:
-                              frequency: Permanent
-                              type: mobility
-                              support_status: Required
-                        transport_requirement: Adaptable vehical
-                        housing_type: Social housing
-                        programs_enrollments:
-                          - programme_name: financial_assistance
-                            programme_identifier: AD234
-                        registration_date: '2023-01-10T00:00:00Z'
-                        last_updated: '2023-09-20T00:00:00Z'
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/NotifyEventRequest/properties/notify_event/items/properties/data/properties/reg_records'
                 required:
                   - reg_record_type
                   - reg_records
@@ -1578,7 +1627,7 @@ components:
                   reg_records:
                     description: |
                       The "Disabled" object contains fields expected in response of search
-                      @context: https://schema.spdci.org/extensions/dr/v1/DisabilitySupport.jsonld <br>
+                      @context: https://schema.spdci.org/extensions/dr/v1/data/DisabilitySupport.jsonld <br>
                       @type: "@context" <br>
                       @container: "@set" <br>
                     type: array
@@ -1591,7 +1640,7 @@ components:
                           type: array
                           description: |
                             List of a member disability info related to the person we are searching for.
-                            @context: https://schema.spdci.org/extensions/dr/v1/DRPerson.jsonld <br>
+                            @context: https://schema.spdci.org/extensions/dr/v1/data/DRPerson.jsonld <br>
                             @type: "@context" <br>
                           items:
                             type: object
@@ -1708,7 +1757,7 @@ components:
                   reg_records:
                     description: |
                       The "Disabled" object contains fields expected in response of search
-                      @context: https://schema.spdci.org/extensions/dr/v1/DRPerson.jsonld <br>
+                      @context: https://schema.spdci.org/extensions/dr/v1/data/DRPerson.jsonld <br>
                       @type: "@context" <br>
                       @container: "@set" <br>
                     type: array
@@ -1718,7 +1767,7 @@ components:
                         1. Attributes of a person to create fetch records, create verifiable credentials or use in search criteria.
 
 
-                        @context: https://schema.spdci.org/extensions/dr/v1/DisabledPerson.jsonld <br>
+                        @context: https://schema.spdci.org/extensions/dr/v1/data/PWDPerson.jsonld <br>
                         @type: "@context" <br>
                       example:
                         disability_details:
@@ -1926,73 +1975,75 @@ components:
                                     4. example: "spdci-extensions-dci:Member" 
                                 example: 'spdci-extensions-dci:Member'
                               reg_records:
-                                type: object
-                                description: |
-                                  The "person" object contains fields expected in response of search
-                                  @context: https://schema.spdci.org/core/v1/data/Member.jsonld <br>
-                                  @type: "Person" <br>
-                                  @container: "@set" <br> 
-                                example:
+                                type: array
+                                items:
                                   type: object
                                   description: |
-                                    1. Attributes of a person to create fetch records, create verifiable credentials or use in search criteria.
-                                    3. Allows Country/Registry specific implementation extensions using Attribute Name/Value pairs.
-
+                                    The "person" object contains fields expected in response of search
                                     @context: https://schema.spdci.org/core/v1/data/Member.jsonld <br>
-                                    @type: "@context" <br>
+                                    @type: "Person" <br>
+                                    @container: "@set" <br> 
                                   example:
-                                    '@context':
-                                      spdci: 'https://schema.spdci.org/core/v1/data'
-                                      rdfs: 'http://www.w3.org/2000/01/rdf-schema#'
-                                      xsd: 'http://www.w3.org/2001/XMLSchema#'
-                                      owl: 'http://www.w3.org/2002/07/owl#'
-                                      common: 'https://schema.spdci.org/common/v1/'
-                                    '@id': 'https://example.org/sr_person/847951632'
-                                    '@type': 'spdci:member'
-                                    member_identifier:
-                                      - '@type': Identifier
-                                        identifier_type: UIN
-                                        identifier_value: '42343545654'
-                                    demographic_info:
-                                      '@type': SRPerson
-                                      identifier:
+                                    type: object
+                                    description: |
+                                      1. Attributes of a person to create fetch records, create verifiable credentials or use in search criteria.
+                                      3. Allows Country/Registry specific implementation extensions using Attribute Name/Value pairs.
+
+                                      @context: https://schema.spdci.org/core/v1/data/Member.jsonld <br>
+                                      @type: "@context" <br>
+                                    example:
+                                      '@context':
+                                        spdci: 'https://schema.spdci.org/core/v1/data'
+                                        rdfs: 'http://www.w3.org/2000/01/rdf-schema#'
+                                        xsd: 'http://www.w3.org/2001/XMLSchema#'
+                                        owl: 'http://www.w3.org/2002/07/owl#'
+                                        common: 'https://schema.spdci.org/common/v1/'
+                                      '@id': 'https://example.org/sr_person/847951632'
+                                      '@type': 'spdci:member'
+                                      member_identifier:
                                         - '@type': Identifier
-                                          identifier_type: NationalID
-                                          identifier_value: '9876543210'
-                                      name:
-                                        '@type': Name
-                                        surname: Smith
-                                        given_name: Alice
-                                        prefix: Ms.
-                                        suffix: ''
-                                      sex: female
-                                      birth_date: '1985-05-20'
-                                    related_person:
-                                      - '@type': RelatedPerson
-                                        relationship_type: spouse
-                                        related_member:
-                                          '@type': Member
-                                          '@id': 'https://example.org/member/123456789'
-                                          member_identifier: M123456789
-                                      - '@type': RelatedPerson
-                                        relationship_type: child
-                                        related_member:
-                                          '@type': Member
-                                          '@id': 'https://example.org/member/987654322'
-                                          'spdci:member_identifier': M987654322
-                                    is_disabled: false
-                                    marital_status: married
-                                    employment_status: employed
-                                    occupation: teacher
-                                    income_level: middle
-                                    language_code:
-                                      - en
-                                      - es
-                                    education_level: bachelor
-                                    additional_attributes:
-                                      - extra_work: volunteer
-                                    registration_date: '2022-01-10T08:00:00Z'
-                                    last_updated: '2023-06-15T10:00:00Z'
+                                          identifier_type: UIN
+                                          identifier_value: '42343545654'
+                                      demographic_info:
+                                        '@type': SRPerson
+                                        identifier:
+                                          - '@type': Identifier
+                                            identifier_type: NationalID
+                                            identifier_value: '9876543210'
+                                        name:
+                                          '@type': Name
+                                          surname: Smith
+                                          given_name: Alice
+                                          prefix: Ms.
+                                          suffix: ''
+                                        sex: female
+                                        birth_date: '1985-05-20'
+                                      related_person:
+                                        - '@type': RelatedPerson
+                                          relationship_type: spouse
+                                          related_member:
+                                            '@type': Member
+                                            '@id': 'https://example.org/member/123456789'
+                                            member_identifier: M123456789
+                                        - '@type': RelatedPerson
+                                          relationship_type: child
+                                          related_member:
+                                            '@type': Member
+                                            '@id': 'https://example.org/member/987654322'
+                                            'spdci:member_identifier': M987654322
+                                      is_disabled: false
+                                      marital_status: married
+                                      employment_status: employed
+                                      occupation: teacher
+                                      income_level: middle
+                                      language_code:
+                                        - en
+                                        - es
+                                      education_level: bachelor
+                                      additional_attributes:
+                                        - extra_work: volunteer
+                                      registration_date: '2022-01-10T08:00:00Z'
+                                      last_updated: '2023-06-15T10:00:00Z'
                             required:
                               - reg_record_type
                               - reg_records

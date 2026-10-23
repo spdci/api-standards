@@ -3,7 +3,7 @@
 
  * Identity
  * Civil & Federated Registries
-    * Data & Verifiable Crendential Access - [html](https://standards.spdci.org/standards/release/html/registry_core_api_v1.0.0.html), [yaml](https://standards.spdci.org/standards/release/yaml/registry_core_api_v1.0.0.yaml)
+    * Data & Verifiable Crendential Access - [html](https://spdci.github.io/api-standards/release/html/registry_core_api_v1.0.0.html), [yaml](https://spdci.github.io/api-standards/release/yaml/registry_core_api_v1.0.0.yaml)
 * Beneficiary Management
     * Registration
     * Assess
@@ -27,6 +27,6 @@
 * Telemetry Events
 * Grievance Mgmt
 * Security
-    * Authorization - [html](https://standards.spdci.org/standards/release/html/authz_core_api_v1.0.0.html), [yaml](https://standards.spdci.org/standards/release/yaml/authz_core_api_v1.0.0.yaml)
+    * Authorization - [html](https://spdci.github.io/api-standards/release/html/authz_core_api_v1.0.0.html), [yaml](https://spdci.github.io/api-standards/release/yaml/authz_core_api_v1.0.0.yaml)
 * API source code
-    * Github [repository](https://standards.spdci.org/standards/src)
+    * Github [repository](https://github.com/spdci/api-standards/tree/draft/src)

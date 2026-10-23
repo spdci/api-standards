@@ -1,7 +1,7 @@
 type: object
 description: |
   The "Member" object contains fields expected in response of search
-  @context: https://schema.spdci.org/extensions/ibr/v1/Member.jsonld <br>
+  @context: https://schema.spdci.org/extensions/ibr/v1/data/Member.jsonld <br>
   @type: "Member" <br>
   @container: "@set" <br> 
 example: 

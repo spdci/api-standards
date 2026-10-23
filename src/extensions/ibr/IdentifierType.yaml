@@ -4,5 +4,5 @@ description: |
   Reference: [Types of ID](https://id4d.worldbank.org/guide/types-id-systems)
   UIN : Unique Identification Number <br>
 
-  @context: https://schema.spdci.org/extensions/ibr/v1/IdentifierTypeEnum.jsonld <br>
+  @context: https://schema.spdci.org/core/v1/code/IdentifierTypeEnum.jsonld <br>
   @type: "@context" <br>

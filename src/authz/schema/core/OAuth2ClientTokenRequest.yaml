@@ -1,0 +1,29 @@
+type: object
+properties:
+  grant_type: 
+    type: string
+    description: "Value must be set to client_credentials"
+    enum:
+      - client_credentials
+    example: "client_credentials"
+  client_id:
+    type: string
+    description: "The client identifier issued to the client during the registration process described by RFC 6749 Section 2.2. Required for client_secret_post and tls_client_auth; omitted when using HTTP Basic."
+    example: "1001"
+  client_secret:
+    type: string
+    description: "Client secret shared with the client during registration or regular rotation. Used only for client_secret_post (RFC 6749 Section 2.3.1)."
+    example: "7Fjfp0ZBr1KtDRbnfVdmIw"
+  client_assertion_type:
+    type: string
+    description: "Used only for private_key_jwt (RFC 7523 Section 2.2)."
+    enum:
+      - "urn:ietf:params:oauth:client-assertion-type:jwt-bearer"
+  client_assertion:
+    type: string
+    description: "Signed JWT identifying the client. Used only for private_key_jwt (RFC 7523 Section 2.2)."
+  scope:
+    $ref: "./OidcScope.yaml"
+required:
+  - grant_type
+description: "Request entity to obtain access token using grant_type = client_credentials. Which client credential fields are present depends on the client authentication method; see the end point description."

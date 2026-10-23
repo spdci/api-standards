@@ -1,7 +1,7 @@
 type: object
 description: |
   The "Group" object contains fields expected in response of search
-  @context: https://schema.spdci.org/extensions/social/v1/Group.jsonld <br>
+  @context: https://schema.spdci.org/extensions/social/v1/data/Group.jsonld <br>
   @type: "Group" <br>
   @container: "@set" <br> 
 example: 

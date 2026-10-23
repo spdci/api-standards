@@ -9,7 +9,7 @@ properties:
     description: | 
         1. Attributes of a person to create fetch records, create verifiable credentials or use in search criteria.
         2. Allows Country/Registry specific implementation extensions using Attribute Name/Value pairs.
-        @context: https://schema.spdci.org/extensions/ibr/v1/Beneficiary.jsonld <br>
+        @context: https://schema.spdci.org/extensions/ibr/v1/data/Beneficiary.jsonld <br>
         @type: "@context" <br>   
     items:
       $ref: Beneficiary.yaml
