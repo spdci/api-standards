@@ -20,9 +20,7 @@ This project follows [semantic versioning](https://semver.org/).
 | Type            | Field / Item                  | Description                   | Ref / Notes |
 |---------------  |-------------------------------|------------------------------ |-------------|
 | 🔴 **Breaking** | IBR `/registry/sync/enrolled` response | Bare `EnrolledResponse` → `{signature, header, message}` envelope; read the payload from `message` | Same envelope as core `/registry/sync/search` |
-| 🔴 **Breaking** | IBR `/registry/sync/enrollment/updates` `header` | `MsgCallbackHeader_V1.0.0` → `MsgHeader_V1.0.0` (`sender_id`, `total_count` now required); `message` required | |
 | 🔴 **Breaking** | IBR `/registry/sync/enrollment/updates` response | Bare `EnrollmentUpdatesResponse` → `{signature, header, message}` envelope with action `on-enrollment-updates` | |
-| 🔴 **Breaking** | `/registry/on-subscribe`, `/registry/on-unsubscribe` `header` (core, CRVS, DR, ESS, FR, IBR, Social) | `MsgHeader_V1.0.0` → `MsgCallbackHeader_V1.0.0`: `status` now required; `sender_id`, `total_count` optional; `sender_uri` removed | Aligns with `on-search`, `notify`, `txn/on-status` |
 | ❌ **Removed**  | `multipart/form-data` on sync endpoints | Removed from IBR `sync/enrolled`, ESS `sync/check-enrollment`, DR `sync/get-disability-support`, `sync/get-disability-details`, `sync/disabled` | Core sync endpoints are JSON only |
 | ❌ **Removed**  | ESS `MsgSyncHeader_V1.0.0` | Replaced by `MsgHeader_V1.0.0` on ESS sync endpoints | Same required fields; non-breaking for existing requests |
 | 🟢 **Added**    | Authz `/oauth2/client/token` client authentication | Accepts several client authentication methods: HTTP Basic (`client_secret_basic`), body credentials (`client_secret_post`), `private_key_jwt` (RFC 7523), mutual TLS (RFC 8705) and the existing bearer token. Added `ClientBasicAuth` security scheme and `client_assertion_type` / `client_assertion` request fields; only `grant_type` is required | Non-breaking: existing bearer-token clients still valid |
@@ -30,6 +28,8 @@ This project follows [semantic versioning](https://semver.org/).
 | 🟢 **Added**    | DR `/registry/sync/txn/status` | Sync transaction status endpoint, as in core | |
 | 🟢 **Added**    | ESS `/registry/sync/txn/status` | Endpoint was mis-indented under `check-enrollment` and not defined | |
 | 🟢 **Added**    | `src/authz/authz_core_api_v1.0.0.yaml` | Authz API source restored (removed in `6408779`) and added back to `build/build_apis.cmd` | Published spec unchanged apart from the client authentication and response changes above |
+| 🟡 **Updated**  | IBR `/registry/sync/enrollment/updates` `header` | `MsgCallbackHeader_V1.0.0` → `MsgHeader_V1.0.0` (request header, as for every other request); `message` required | Bug fix, non-breaking: header aligned with the standards |
+| 🟡 **Updated**  | `/registry/on-subscribe`, `/registry/on-unsubscribe` `header` (core, CRVS, DR, ESS, FR, IBR, Social) | `MsgHeader_V1.0.0` → `MsgCallbackHeader_V1.0.0`, as for `on-search`, `notify` and `txn/on-status` | Bug fix, non-breaking: header aligned with the standards |
 | 🟡 **Updated**  | IBR `/registry/sync/enrolled` `header.action` | `search` → `enrolled`; response action `on-enrolled` | Bug fix, non-breaking: action value corrected to match the endpoint |
 | 🟡 **Updated**  | IBR `/registry/sync/enrollment/updates` `header.action` | `notify` → `enrollment-updates` | Bug fix, non-breaking: action value corrected to match the endpoint |
 | 🟡 **Updated**  | ESS `/registry/sync/check-enrollment` `header.action` | `enrollementstatus` → `check-enrollment` (typo); response action `txn-on-status` → `on-check-enrollment` | Bug fix, non-breaking: action value corrected to match the endpoint |
