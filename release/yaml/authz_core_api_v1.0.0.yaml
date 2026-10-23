@@ -20,7 +20,7 @@ paths:
   /oauth2/client/token:
     post:
       summary: 'AUTHZ-TOKN : /oauth2/client/token'
-      description: '<br> <b>Client integration notes: </b><br> 1. This end point is in compliance with OAuth2 RFC 6749 to authenticate registered confidential clients with grant_type=client_credentials over HTTPS channel. <br> 2. Clients MUST obtain client_id, client_secret as part of client registration. <br> 2. Clients MUST ensure to secure sensitive information e.g, client_secret,  access_token, etc., <br> 3. RFC 6749 section 4.4.3 recommends NO support for refresh access_token. <br> 4. Successfully authenticated clients SHALL receive bearer type access_token. <br> 5. Clients MUST set HTTP "Authorization: Bearer <access_token>" in HTTP header to access any spdci compliant api end points.<br> 6. Rest end points SHALL return <b>http status 401</b> when access_token is invalid or expired.<br>'
+      description: '<br> <b>Client integration notes: </b><br> 1. This end point is in compliance with OAuth2 RFC 6749 to authenticate registered confidential clients with grant_type=client_credentials over HTTPS channel. <br> 2. Clients MUST obtain client_id, client_secret as part of client registration. <br> 2. This end point does NOT require a bearer token. Clients authenticate with client_id and client_secret in the request body (RFC 6749 section 2.3.1). <br> 2. Clients MUST ensure to secure sensitive information e.g, client_secret,  access_token, etc., <br> 3. RFC 6749 section 4.4.3 recommends NO support for refresh access_token. <br> 4. Successfully authenticated clients SHALL receive bearer type access_token. <br> 5. Clients MUST set HTTP "Authorization: Bearer <access_token>" in HTTP header to access any spdci compliant api end points.<br> 6. Rest end points SHALL return <b>http status 401</b> when access_token is invalid or expired.<br>'
       operationId: post_oauth2_client_token
       parameters:
         - $ref: '#/components/parameters/accept-language'
@@ -40,12 +40,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/OAuth2ClientTokenResponse'
+        '400':
+          $ref: '#/components/responses/HttpErrorResponse'
+        '401':
+          $ref: '#/components/responses/HttpErrorResponse'
         '404':
           $ref: '#/components/responses/HttpErrorResponse'
         '500':
           $ref: '#/components/responses/HttpErrorResponse'
-      security:
-        - Authorization: []
+      security: []
       deprecated: false
 components:
   schemas:
