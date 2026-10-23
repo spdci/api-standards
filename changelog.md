@@ -19,14 +19,9 @@ This project follows [semantic versioning](https://semver.org/).
 
 | Type            | Field / Item                  | Description                   | Ref / Notes |
 |---------------  |-------------------------------|------------------------------ |-------------|
-| 🔴 **Breaking** | IBR `/registry/sync/enrolled` `header.action` | `search` → `enrolled`; response action `on-enrolled` | Response previously had no header |
 | 🔴 **Breaking** | IBR `/registry/sync/enrolled` response | Bare `EnrolledResponse` → `{signature, header, message}` envelope; read the payload from `message` | Same envelope as core `/registry/sync/search` |
-| 🔴 **Breaking** | IBR `/registry/sync/enrollment/updates` `header` | `MsgCallbackHeader_V1.0.0` → `MsgHeader_V1.0.0` (`sender_id`, `total_count` now required); action `notify` → `enrollment-updates`; `message` required | |
+| 🔴 **Breaking** | IBR `/registry/sync/enrollment/updates` `header` | `MsgCallbackHeader_V1.0.0` → `MsgHeader_V1.0.0` (`sender_id`, `total_count` now required); `message` required | |
 | 🔴 **Breaking** | IBR `/registry/sync/enrollment/updates` response | Bare `EnrollmentUpdatesResponse` → `{signature, header, message}` envelope with action `on-enrollment-updates` | |
-| 🔴 **Breaking** | ESS `/registry/sync/check-enrollment` `header.action` | `enrollementstatus` → `check-enrollment`; response action `txn-on-status` → `on-check-enrollment` | |
-| 🔴 **Breaking** | DR `/registry/sync/get-disability-support` `header.action` | `search` / `on-search` → `get-disability-support` / `on-get-disability-support` | |
-| 🔴 **Breaking** | DR `/registry/sync/get-disability-details` `header.action` | `search` / `on-search` → `get-disability-details` / `on-get-disability-details` | |
-| 🔴 **Breaking** | DR `/registry/sync/disabled` `header.action` | `search` / `on-search` → `disabled` / `on-disabled` | |
 | 🔴 **Breaking** | `/registry/on-subscribe`, `/registry/on-unsubscribe` `header` (core, CRVS, DR, ESS, FR, IBR, Social) | `MsgHeader_V1.0.0` → `MsgCallbackHeader_V1.0.0`: `status` now required; `sender_id`, `total_count` optional; `sender_uri` removed | Aligns with `on-search`, `notify`, `txn/on-status` |
 | ❌ **Removed**  | `multipart/form-data` on sync endpoints | Removed from IBR `sync/enrolled`, ESS `sync/check-enrollment`, DR `sync/get-disability-support`, `sync/get-disability-details`, `sync/disabled` | Core sync endpoints are JSON only |
 | ❌ **Removed**  | ESS `MsgSyncHeader_V1.0.0` | Replaced by `MsgHeader_V1.0.0` on ESS sync endpoints | Same required fields; non-breaking for existing requests |
@@ -35,6 +30,12 @@ This project follows [semantic versioning](https://semver.org/).
 | 🟢 **Added**    | DR `/registry/sync/txn/status` | Sync transaction status endpoint, as in core | |
 | 🟢 **Added**    | ESS `/registry/sync/txn/status` | Endpoint was mis-indented under `check-enrollment` and not defined | |
 | 🟢 **Added**    | `src/authz/authz_core_api_v1.0.0.yaml` | Authz API source restored (removed in `6408779`) and added back to `build/build_apis.cmd` | Published spec unchanged apart from the client authentication and response changes above |
+| 🟡 **Updated**  | IBR `/registry/sync/enrolled` `header.action` | `search` → `enrolled`; response action `on-enrolled` | Bug fix, non-breaking: action value corrected to match the endpoint |
+| 🟡 **Updated**  | IBR `/registry/sync/enrollment/updates` `header.action` | `notify` → `enrollment-updates` | Bug fix, non-breaking: action value corrected to match the endpoint |
+| 🟡 **Updated**  | ESS `/registry/sync/check-enrollment` `header.action` | `enrollementstatus` → `check-enrollment` (typo); response action `txn-on-status` → `on-check-enrollment` | Bug fix, non-breaking: action value corrected to match the endpoint |
+| 🟡 **Updated**  | DR `/registry/sync/get-disability-support` `header.action` | `search` / `on-search` → `get-disability-support` / `on-get-disability-support` | Bug fix, non-breaking: action value corrected to match the endpoint |
+| 🟡 **Updated**  | DR `/registry/sync/get-disability-details` `header.action` | `search` / `on-search` → `get-disability-details` / `on-get-disability-details` | Bug fix, non-breaking: action value corrected to match the endpoint |
+| 🟡 **Updated**  | DR `/registry/sync/disabled` `header.action` | `search` / `on-search` → `disabled` / `on-disabled` | Bug fix, non-breaking: action value corrected to match the endpoint |
 | 🟡 **Updated**  | Core and DR `SearchResponse` `reg_records` | Fixed to an array of `RegistryRecord`, as the standards define and CRVS, ESS, FR, IBR and Social already have | Bug fix, non-breaking. Notify events keep a single `RegistryRecord` |
 | 🟡 **Updated**  | `security: Authorization` on DR custom sync endpoints, FR `sync/txn/status`, IBR `sync/enrolled` and `sync/txn/status`, ESS `sync/check-enrollment` and `sync/txn/status` | Added the missing `security` declaration; bearer token was already required by the DCI standards | Bug fix, non-breaking |
 | 🟡 **Updated**  | IBR `securitySchemes` | Fixed `securitySchemas` typo so the `Authorization` scheme is defined in the spec | Typo fix, non-breaking: implementers already use the intended `Authorization` scheme |
