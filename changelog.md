@@ -29,7 +29,6 @@ This project follows [semantic versioning](https://semver.org/).
 | 🔴 **Breaking** | DR `/registry/sync/disabled` `header.action` | `search` / `on-search` → `disabled` / `on-disabled` | |
 | 🔴 **Breaking** | `/registry/on-subscribe`, `/registry/on-unsubscribe` `header` (core, CRVS, DR, ESS, FR, IBR, Social) | `MsgHeader_V1.0.0` → `MsgCallbackHeader_V1.0.0`: `status` now required; `sender_id`, `total_count` optional; `sender_uri` removed | Aligns with `on-search`, `notify`, `txn/on-status` |
 | 🔴 **Breaking** | `security: Authorization` on DR custom sync endpoints, FR `sync/txn/status`, IBR `sync/enrolled` and `sync/txn/status`, ESS `sync/check-enrollment` and `sync/txn/status` | Bearer token now required; calls without it get HTTP 401 | Previously unsecured |
-| 🔴 **Breaking** | IBR `securitySchemes` | Fixed `securitySchemas` typo; the `Authorization` scheme is now actually defined for all IBR endpoints | |
 | 🔴 **Breaking** | Core and DR `SearchResponse` `reg_records` | Single `RegistryRecord` → array of `RegistryRecord`, matching CRVS, ESS, FR, IBR and Social | Notify events keep a single `RegistryRecord` |
 | ❌ **Removed**  | `multipart/form-data` on sync endpoints | Removed from IBR `sync/enrolled`, ESS `sync/check-enrollment`, DR `sync/get-disability-support`, `sync/get-disability-details`, `sync/disabled` | Core sync endpoints are JSON only |
 | ❌ **Removed**  | ESS `MsgSyncHeader_V1.0.0` | Replaced by `MsgHeader_V1.0.0` on ESS sync endpoints | Same required fields; non-breaking for existing requests |
@@ -38,6 +37,7 @@ This project follows [semantic versioning](https://semver.org/).
 | 🟢 **Added**    | DR `/registry/sync/txn/status` | Sync transaction status endpoint, as in core | |
 | 🟢 **Added**    | ESS `/registry/sync/txn/status` | Endpoint was mis-indented under `check-enrollment` and not defined | |
 | 🟢 **Added**    | `src/authz/authz_core_api_v1.0.0.yaml` | Authz API source restored (removed in `6408779`) and added back to `build/build_apis.cmd` | Published spec unchanged apart from the client authentication and response changes above |
+| 🟡 **Updated**  | IBR `securitySchemes` | Fixed `securitySchemas` typo so the `Authorization` scheme is defined in the spec | Typo fix, non-breaking: implementers already use the intended `Authorization` scheme |
 | 🟡 **Updated**  | Authz `OAuth2ClientTokenResponse.expires_in` | Accepts integer (recommended, RFC 6749 §5.1) or numeric string (backward compatible). Description now says to send the token as `Authorization: Bearer`, not `x-api-token` | Non-breaking |
 | 🟡 **Updated**  | IBR process flows 1–2, DR process flows 1–2 sample JSONs | Updated to the new actions, envelopes and header types (`total_count` integer, `meta` object, valid `status`); now validate against the spec | |
 | 🟡 **Updated**  | Core `/registry/on-search` | Added `operationId: post_reg_on-search` | |
