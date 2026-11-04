@@ -25,7 +25,7 @@ info:
     - [Support Frequency](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.04-supportfrequency)   
     - [Support Status](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.05-supportstatusenum)
     - [Assistive Technology](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.06-assistivetechnologyenum)
-    - [Disability Status](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.07-disabilityonset)
+    - [Disability Onset](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.07-disabilityonset)
     - [Impairment Cause](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.08-impairmentcause-functionallimitationcause)
     - [Transport Requirement](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.9-transportrequirement)
     - [Housing Type](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.10-housingtype)
@@ -36,6 +36,7 @@ info:
     - [Disability Status Level](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.15-disabilitystatuslevel)
 
     Data Objects:
+    - [DRPerson](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/data-objects/do.dr.01-drperson)
     - [PWDPerson](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/data-objects/do.dr.03-personwithdisability-pwd)
     - [Disability Details](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/data-objects/do.dr.04-disabilitydetails)
     - [Disability Support](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/data-objects/do.dr.05-disabilitysupport)
@@ -44,7 +45,7 @@ info:
     - [Medical Care](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/data-objects/do.dr.08-medicalcare)
     - [Housing Support](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/data-objects/do.dr.09-housingsupport)
     - [Animal Assistance](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/data-objects/do.dr.10-animalassistance)
-    - [Member](https://standards.spdci.org/standards/dci-standards/wip-social-registry-v1.0.0/social-registry/1.-crvs/data/data-objects/do.sr.02-member)
+    - [Member](https://standards.spdci.org/standards/dci-standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/data-objects/do.dr.02-member)
 
 
 

@@ -29,12 +29,13 @@ info:
     - [Programme Type](https://standards.spdci.org/standards/dci-standards/wip-integrated-beneficiary-registry-v1.0.0/ibr/1.-crvs/data/code-directory/cd.ibr.07-programme_type)
 
     Data Objects:
+    - [Person](https://standards.spdci.org/standards/dci-standards/wip-integrated-beneficiary-registry-v1.0.0/ibr/1.-crvs/data/data-objects/do.ibr.01-person)
     - [Beneficiary](https://standards.spdci.org/standards/dci-standards/wip-integrated-beneficiary-registry-v1.0.0/ibr/1.-crvs/data/data-objects/do.ibr.04-beneficiary)
     - [Programme](https://standards.spdci.org/standards/dci-standards/wip-integrated-beneficiary-registry-v1.0.0/ibr/1.-crvs/data/data-objects/do.ibr.02-programme)
     - [Benefit](https://standards.spdci.org/standards/dci-standards/wip-integrated-beneficiary-registry-v1.0.0/ibr/1.-crvs/data/data-objects/do.ibr.03-benefit)
     - [Benefit Frequency](https://standards.spdci.org/standards/dci-standards/wip-integrated-beneficiary-registry-v1.0.0/ibr/1.-crvs/data/data-objects/do.ibr.o4-benefit-frequency) 
-    - [Group](https://standards.spdci.org/standards/dci-standards/wip-social-registry-v1.0.0/social-registry/1.-crvs/data/data-objects/do.sr.03-group)
-    - [Member](https://standards.spdci.org/standards/dci-standards/wip-social-registry-v1.0.0/social-registry/1.-crvs/data/data-objects/do.sr.02-member)
+    - [Group](https://standards.spdci.org/standards/dci-standards/wip-integrated-beneficiary-registry-v1.0.0/ibr/1.-crvs/data/data-objects/do.ibr.03-group)
+    - [Member](https://standards.spdci.org/standards/dci-standards/wip-integrated-beneficiary-registry-v1.0.0/ibr/1.-crvs/data/data-objects/do.ibr.02-member)
 
 
     Each request is build up of three parts 

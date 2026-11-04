@@ -16,7 +16,7 @@ info:
     3. Request status check: The request status checking APIs implement to check status of request sent in any above APIs
 
     Gitbook reference link :
-    - [Core DCI- V1.0.0 ](https://standards.spdci.org/standards)
+    - [Core DCI- V1.0.0 ](https://standards.spdci.org/standards/standards-for-interoperability-interfaces/common-standards-for-interoperability-interfaces)
 
     Code directory links:
     - [Identifiers](https://schema.spdci.org/core/v1/code/IdentifierTypeEnum.jsonld)

@@ -37,14 +37,15 @@ info:
     - [ForestActivities](https://standards.spdci.org/standards/dci-standards/wip-farmers-registry/farmers-registry-and-sp-system-interface/1.-crvs/data/code-directory/cd.fr.16-forestactivities)
 
     Data Objects:
+    - [Person](https://standards.spdci.org/standards/dci-standards/wip-farmers-registry/farmers-registry-and-sp-system-interface/1.-crvs/data/data-objects/do.fr.01-person)
     - [Farmer](https://standards.spdci.org/standards/dci-standards/wip-farmers-registry/farmers-registry-and-sp-system-interface/1.-crvs/data/data-objects/do.fr.04-farmer)
     - [FarmInfo](https://standards.spdci.org/standards/dci-standards/wip-farmers-registry/farmers-registry-and-sp-system-interface/1.-crvs/data/data-objects/do.fr.05-farminfo)
     - [FarmingActivities](https://standards.spdci.org/standards/dci-standards/wip-farmers-registry/farmers-registry-and-sp-system-interface/1.-crvs/data/data-objects/do.fr.06-farmingactivities)
     - [CropDetails](https://standards.spdci.org/standards/dci-standards/wip-farmers-registry/farmers-registry-and-sp-system-interface/1.-crvs/data/data-objects/do.fr.07-cropdetails)
     - [LiveStockDetails](https://standards.spdci.org/standards/dci-standards/wip-farmers-registry/farmers-registry-and-sp-system-interface/1.-crvs/data/data-objects/do.fr.08-livestockdetails)
     - [Machinery](https://standards.spdci.org/standards/dci-standards/wip-farmers-registry/farmers-registry-and-sp-system-interface/1.-crvs/data/data-objects/do.fr.09-machinery)
-    - [Group](https://standards.spdci.org/standards/dci-standards/wip-social-registry-v1.0.0/social-registry/1.-crvs/data/data-objects/do.sr.03-group) 
-    - [Member](https://standards.spdci.org/standards/dci-standards/wip-social-registry-v1.0.0/social-registry/1.-crvs/data/data-objects/do.sr.02-member)
+    - [Group](https://standards.spdci.org/standards/dci-standards/wip-farmers-registry/farmers-registry-and-sp-system-interface/1.-crvs/data/data-objects/do.fr.03-group) 
+    - [Member](https://standards.spdci.org/standards/dci-standards/wip-farmers-registry/farmers-registry-and-sp-system-interface/1.-crvs/data/data-objects/do.fr.02-member)
    
     
     Each request is build up of three parts
