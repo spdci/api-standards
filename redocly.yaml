@@ -11,7 +11,7 @@ extends:
   
 rules:
   # A sample custom rule. Read more about rules: https://redocly.com/docs/cli/rules/
-  assert/operation-description:
+  rule/operation-description:
     subject: 
       type: Operation
       property: description

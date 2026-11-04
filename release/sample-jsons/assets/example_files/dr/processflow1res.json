@@ -1,86 +1,83 @@
 {
     "signature": "Signature: namespace=\"dci\", kidId=\"DR|unique_key_id|ed25519\", algorithm=\"ed25519\", created=\"1691746200\", expires=\"1691832600\", headers=\"(created) (expires) digest\", signature=\"Base64(signing content)\"",
     "header": {
-      "version": "1.0.0",
-      "message_id": "1a2b3c4d-5678-90ab-cdef-1234567890ab",
-      "message_ts": "2024-08-11T10:00:00.000Z",
-      "action": "check_disability_status",
-      "status": "ack",
-      "status_reason_code": "200",
-      "status_reason_message": "Person is confirmed as disabled",
-      "total_count": "1",
-      "completed_count": "1",
-      "sender_id": "DR",
-      "receiver_id": "SP-System",
-      "is_msg_encrypted": false,
-      "meta": ""
+        "version": "1.0.0",
+        "message_id": "1a2b3c4d-5678-90ab-cdef-1234567890ab",
+        "message_ts": "2024-08-11T10:00:00.000Z",
+        "action": "on-search",
+        "status": "succ",
+        "status_reason_message": "Person is confirmed as disabled",
+        "total_count": 1,
+        "completed_count": 1,
+        "sender_id": "DR",
+        "receiver_id": "SP-System",
+        "is_msg_encrypted": false,
+        "meta": {}
     },
     "message": {
-      "transaction_id": "txn-9876543210",
-      "message": {
-        "timestamp": "2024-08-11T10:00:00.000Z",
+        "transaction_id": "txn-9876543210",
         "correlation_id": "1234567890",
         "search_response": [
-          {
-            "reference_id": "12345678901234567890",
-            "timestamp": "",
-            "status": "rcvd",
-            "status_reason_code": "rjct.reference_id.invalid",
-            "status_reason_message": "string",
-            "data": {
-            "version": "1.0.0",
-            "reg_type": "ns:org:RegistryType:DR",
-            "reg_event_type": "spdci-common:RegistryEventType:DisabledPerson",
-            "reg_record_type": "spdci-extensions-dci:DisabledPerson",
-            "reg_records": {
-            "type": "object",
-             "example": {
-                "personal_details": {
-                  "identifier": "123456",
-                  "name": {
-                    "first_name": "John",
-                    "last_name": "Doe"
-                  },
-                  "date_of_birth": "1990-05-15",
-                  "gender": "Male"
+            {
+                "reference_id": "12345678901234567890",
+                "timestamp": "2024-08-11T10:00:00.000Z",
+                "status": "succ",
+                "status_reason_message": "Records found",
+                "data": {
+                    "version": "1.0.0",
+                    "reg_type": "ns:org:RegistryType:DR",
+                    "reg_event_type": "spdci-common:RegistryEventType:DisabledPerson",
+                    "reg_record_type": "spdci-extensions-dci:DisabledPerson",
+                    "reg_records": [
+                        {
+                            "personal_details": {
+                                "identifier": "123456",
+                                "name": {
+                                    "first_name": "John",
+                                    "last_name": "Doe"
+                                },
+                                "date_of_birth": "1990-05-15",
+                                "gender": "Male"
+                            },
+                            "disability_status": "Approved",
+                            "disability_level": "Severe",
+                            "disability_details": [
+                                {
+                                    "impairment_type": "Physical and movement related functions",
+                                    "impairment_level": "Severe impairment or difficulty",
+                                    "impairment_cause": "Work Accident",
+                                    "age_on_set": "Working age"
+                                }
+                            ],
+                            "disability_support": [
+                                {
+                                    "human_assistance": {
+                                        "frequency": "Permanent",
+                                        "type": "mobility",
+                                        "support_status": "Required"
+                                    }
+                                }
+                            ],
+                            "transport_requirement": "Adaptable vehical",
+                            "housing_type": "Social housing",
+                            "programs_enrollments": [
+                                {
+                                    "programme_name": "financial_assistance",
+                                    "programme_identifier": "AD234"
+                                }
+                            ],
+                            "registration_date": "2023-01-10T00:00:00Z",
+                            "last_updated": "2023-09-20T00:00:00Z"
+                        }
+                    ]
                 },
-                "disability_status": "Approved",
-                "disability_level": "Severe",
-                "disability_details": [
-                  {
-                    "impairment_type": "Physical and movement related functions",
-                    "impairment_level": "Severe impairment or difficulty",
-                    "impairment_cause": "Work Accident",
-                    "age_on_set": "Working age"
-                  }
-                ],
-                "disability_support": [
-                  {
-                    "human_assistance":{
-                        "frequency": "Permanent",
-                        "type": "mobility",
-                        "support_status": "Required"
-                      }  
-                  }
-                ],
-                "transport_requirement": "Adaptable vehical",
-                "housing_type": "Social housing",
-                "programs_enrollments":[
-                    {
-                      "programme_name" : "financial_assistance",
-                      "programme_identifier": "AD234"
-                    }
-                ],
-                "registration_date": "2023-01-10T00:00:00Z",
-                "last_updated": "2023-09-20T00:00:00Z"
-              }
-          }
-        },
-        "pagination": {},
-        "locale": "en"
-        }
+                "pagination": {
+                    "page_size": 10,
+                    "page_number": 1,
+                    "total_count": 1
+                },
+                "locale": "eng"
+            }
         ]
-      }
     }
-  }
-  
+}

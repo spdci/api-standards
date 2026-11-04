@@ -1,0 +1,24 @@
+type: object
+description: "Error response from the token end point as defined in RFC 6749 Section 5.2."
+properties:
+  error:
+    type: string
+    description: "Error code as defined in RFC 6749 Section 5.2."
+    enum:
+      - invalid_request
+      - invalid_client
+      - invalid_grant
+      - unauthorized_client
+      - unsupported_grant_type
+      - invalid_scope
+    example: "invalid_client"
+  error_description:
+    type: string
+    description: "Human-readable text providing additional information about the error."
+    example: "Client authentication failed"
+  error_uri:
+    type: string
+    format: uri
+    description: "URI identifying a human-readable web page with information about the error."
+required:
+  - error

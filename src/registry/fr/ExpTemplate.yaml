@@ -14,7 +14,7 @@ properties:
   value:
     type: object
     description: |
-      @context: https://schema.spdci.org/v1/api-schemas/QueryExpression.jsonld <br>
+      @context: https://schema.spdci.org/common/v1/api-schemas/QueryExpression.jsonld <br>
       @type: "QueryExpression" <br>
 
       **Notes:**

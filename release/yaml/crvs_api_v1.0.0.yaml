@@ -16,13 +16,13 @@ info:
     3. Request status check: The request status checking APIs implement to check status of request sent in any above APIs
 
     Gitbook reference link:
-    - [CRVS - V1.0 ](https://standards.spdci.org/standards/v/crvs-v1.0-1/)
+    - [CRVS - V1.0 ](https://standards.spdci.org/standards/dci-standards/crvs-v1.0-1)
 
     Code directory links:
-     - [Vital event types](https://schema.spdci.org/extensions/crvs/v1/code/VitalEventTypeEnum)   
+     - [Vital event types](https://schema.spdci.org/extensions/crvs/v1/code/VitalEventTypeEnum.jsonld)   
 
     Data Objects:
-    - [Person](https://schema.spdci.org/extensions/crvs/v1/data/crvsPerson.jsonld)
+    - [Person](https://schema.spdci.org/extensions/crvs/v1/data/CRVSPerson.jsonld)
 
     Each request is build up of three parts
     - signature 
@@ -297,7 +297,7 @@ paths:
                   $ref: '#/components/schemas/MsgSignature'
                 header:
                   allOf:
-                    - $ref: '#/components/schemas/MsgHeader_V1.0.0'
+                    - $ref: '#/components/schemas/MsgCallbackHeader_V1.0.0'
                     - properties:
                         action:
                           enum:
@@ -454,7 +454,7 @@ paths:
                   $ref: '#/components/schemas/MsgSignature'
                 header:
                   allOf:
-                    - $ref: '#/components/schemas/MsgHeader_V1.0.0'
+                    - $ref: '#/components/schemas/MsgCallbackHeader_V1.0.0'
                     - properties:
                         action:
                           enum:
@@ -1208,7 +1208,7 @@ components:
                     items:
                       type: object
                       description: |
-                        @context: "https://schema.spdci.org/extensions/crvs/v1/CRVSPerson.jsonld" <br>
+                        @context: "https://schema.spdci.org/extensions/crvs/v1/data/CRVSPerson.jsonld" <br>
                         @type: "Consent"
                       example:
                         '@context':

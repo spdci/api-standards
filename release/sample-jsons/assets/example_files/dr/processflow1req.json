@@ -1,51 +1,58 @@
 {
     "signature": "Signature:  namespace=\"dci\", kidId=\"SPMIS|{unique_key_id}|{algorithm}\", algorithm=\"ed25519\", created=\"1606970629\", expires=\"1607030629\", headers=\"(created) (expires) digest\", signature=\"Base64(signing content)",
     "header": {
-      "version": "1.0.0",
-      "message_id": "0c96614c-7255-4774-b109-cd53ee851769",
-      "message_ts": "2023-07-19T12:15:04.555Z",
-      "action": "verify",
-      "sender_id": "SP-System",
-      "sender_uri": "",
-      "receiver_id": "DR",
-      "total_count": "1",
-      "is_msg_encrypted": false,
-      "meta": ""
+        "version": "1.0.0",
+        "message_id": "0c96614c-7255-4774-b109-cd53ee851769",
+        "message_ts": "2023-07-19T12:15:04.555Z",
+        "action": "search",
+        "sender_id": "SP-System",
+        "receiver_id": "DR",
+        "total_count": 1,
+        "is_msg_encrypted": false,
+        "meta": {}
     },
     "message": {
-            "transaction_id": "txn-1234567890",
-            "search_request": {
-              "reference_id": "12345678901234567890",
-              "timestamp": "",
-              "search_criteria": {
-              "version": "1.0.0",
-              "reg_type": "ns:org:RegistryType:DR",
-              "reg_event_type": "spdci-common:RegistryEventType:DisabledPerson",
-              "query_type": "expression",
-              "query": {
-                "type": "ns:org:QueryType:expression",
-                "value": {
-                "expression": {
-                  "query": {
-                    "$and": [
-                        {
-                        "disability_status": {"$eq": "Approved"}
-                        },
-                        {
-                          "disability_details.impairment_type" : {"$eq":"Mobility"}
+        "transaction_id": "txn-1234567890",
+        "search_request": [
+            {
+                "reference_id": "12345678901234567890",
+                "timestamp": "2023-07-19T12:15:04.555Z",
+                "search_criteria": {
+                    "version": "1.0.0",
+                    "reg_type": "ns:org:RegistryType:DR",
+                    "reg_event_type": "spdci-common:RegistryEventType:DisabledPerson",
+                    "query_type": "expression",
+                    "query": {
+                        "type": "ns:org:QueryType:expression",
+                        "value": {
+                            "expression": {
+                                "query": {
+                                    "$and": [
+                                        {
+                                            "disability_status": {
+                                                "$eq": "Approved"
+                                            }
+                                        },
+                                        {
+                                            "disability_details.impairment_type": {
+                                                "$eq": "Mobility"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
                         }
-                      ]
-                    }
-                  }
-                }
-              },
-              "sort": [],
-              "pagination": {},
-              "consent": {},
-              "authorize": {}
-              },
-              "locale": "en"
+                    },
+                    "sort": [],
+                    "pagination": {
+                        "page_size": 10,
+                        "page_number": 1
+                    },
+                    "consent": {},
+                    "authorize": {}
+                },
+                "locale": "eng"
             }
-        
-        }
-  }
+        ]
+    }
+}

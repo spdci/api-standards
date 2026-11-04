@@ -1,27 +1,27 @@
 {
-  "signature": "Signature:  namespace=\"dci\", kidId=\"{sender_id}|{unique_key_id}|{algorithm}\", algorithm=\"ed25519\", created=\"1606970629\", expires=\"1607030629\", headers=\"(created) (expires) digest\", signature=\"Base64(signing content)",
-  "header": {
-    "version": "1.0.0",
-    "message_id": "0c96614c-7255-4774-b109-cd53ee851769",
-    "message_ts": "2023-07-19T12:15:04.555Z",
-    "action": "register",
-    "status": "rcvd",
-    "status_reason_code": "",
-    "status_reason_message": "",
-    "total_count": "1",
-    "completed_count": "",
-    "sender_id": "IBR",
-    "receiver_id": "SP-System",
-    "is_msg_encrypted": false,
-    "meta": ""
-  },
-  "message": {
-    "transaction_id": "",
-      "message": {
-      "ack_status": "ACK",
-      "timestamp": "",
-      "correlation_id": "9876543210"
-      }
-
-  }
+    "signature": "Signature:  namespace=\"dci\", kidId=\"{sender_id}|{unique_key_id}|{algorithm}\", algorithm=\"ed25519\", created=\"1606970629\", expires=\"1607030629\", headers=\"(created) (expires) digest\", signature=\"Base64(signing content)",
+    "header": {
+        "version": "1.0.0",
+        "message_id": "0c96614c-7255-4774-b109-cd53ee851769",
+        "message_ts": "2023-07-19T12:15:04.555Z",
+        "action": "on-enrollment-updates",
+        "status": "rcvd",
+        "total_count": 1,
+        "sender_id": "IBR",
+        "receiver_id": "SP-System",
+        "is_msg_encrypted": false,
+        "meta": {}
+    },
+    "message": {
+        "transaction_id": "TXN-IBR-ENR-001",
+        "correlation_id": "9876543210",
+        "enrolled_response": [
+            {
+                "reference_id": "REF-IBR-ENR-001",
+                "timestamp": "2023-07-19T12:15:05.000Z",
+                "status": "succ",
+                "status_reason_message": "Beneficiary enrollment recorded"
+            }
+        ]
+    }
 }

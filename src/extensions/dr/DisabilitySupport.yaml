@@ -6,7 +6,7 @@ properties:
     type: array
     description: | 
       List of a member disability info related to the person we are searching for.
-      @context: https://schema.spdci.org/extensions/dr/v1/DRPerson.jsonld <br>
+      @context: https://schema.spdci.org/extensions/dr/v1/data/DRPerson.jsonld <br>
       @type: "@context" <br>
     items:
       type: object

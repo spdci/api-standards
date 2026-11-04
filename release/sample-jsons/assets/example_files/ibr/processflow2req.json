@@ -1,29 +1,26 @@
 {
-  "signature": "Signature:  namespace=\"dci\", kidId=\"{sender_id}|{unique_key_id}|{algorithm}\", algorithm=\"ed25519\", created=\"1606970629\", expires=\"1607030629\", headers=\"(created) (expires) digest\", signature=\"Base64(signing content)",
-  "header": {
-    "version": "1.0.0",
-    "message_id": "0c96614c-7255-4774-b109-cd53ee851769",
-    "message_ts": "2023-07-19T12:15:04.555Z",
-    "action": "search",
-    "sender_id": "SP-System",
-    "sender_uri": "",
-    "receiver_id": "IBR",
-    "total_count": "1",
-    "is_msg_encrypted": false,
-    "meta": ""
-  },
-  "message": {
-    "transaction_id": "",
-    "enrolled_criteria": 
-      {
-        "query_type": "expression",
-        "response_entity": "Beneficiary",
-        "query": {
-          "attribute_name": "person_identifier",
-          "operator": "eq",
-          "attribute_value": "847951632"
+    "signature": "Signature:  namespace=\"dci\", kidId=\"{sender_id}|{unique_key_id}|{algorithm}\", algorithm=\"ed25519\", created=\"1606970629\", expires=\"1607030629\", headers=\"(created) (expires) digest\", signature=\"Base64(signing content)",
+    "header": {
+        "version": "1.0.0",
+        "message_id": "0c96614c-7255-4774-b109-cd53ee851769",
+        "message_ts": "2023-07-19T12:15:04.555Z",
+        "action": "enrolled",
+        "sender_id": "SP-System",
+        "receiver_id": "IBR",
+        "total_count": 1,
+        "is_msg_encrypted": false,
+        "meta": {}
+    },
+    "message": {
+        "transaction_id": "TXN-IBR-ENRD-001",
+        "enrolled_criteria": {
+            "query_type": "expression",
+            "response_entity": "Member",
+            "query": {
+                "attribute_name": "person_identifier",
+                "operator": "eq",
+                "attribute_value": "847951632"
+            }
         }
-      }
-    
-  }
+    }
 }

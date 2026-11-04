@@ -1,6 +1,6 @@
 type: object
 description: |
-  @context: "https://schema.spdci.org/extensions/crvs/v1/CRVSPerson.jsonld" <br>
+  @context: "https://schema.spdci.org/extensions/crvs/v1/data/CRVSPerson.jsonld" <br>
   @type: "Consent"
 example: 
   {

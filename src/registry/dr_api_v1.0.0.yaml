@@ -16,35 +16,36 @@ info:
     3. Request status check: The request status checking APIs implement to check status of request sent in any above APIs
     
     Gitbook reference link:
-    - [DR - V1.0 ](https://standards.spdci.org/standards/wip-disability-registry)
+    - [DR - V1.0 ](https://standards.spdci.org/standards/dci-standards/wip-disability-registry)
 
     Code directory links:
-    - [Impairment Type](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.01-impairmenttype-functional-limitationtype)
-    - [Impairment Level](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.02-impairmentlevel-functional-limitationslevel)
-    - [Human Assistance Type](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.03-humanassistancetype)
-    - [Support Frequency](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.04-supportfrequency)   
-    - [Support Status](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.05-supportstatusenum)
-    - [Assistive Technology](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.06-assistivetechnologyenum)
-    - [Disability Status](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.07-disabilityonset)
-    - [Impairment Cause](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.08-impairmentcause)
-    - [Transport Requirement](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.9-transportrequirement)
-    - [Housing Type](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.10-housingtype)
-    - [Medical Care](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.11-medicalcareenum)
-    - [Housing Support](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.12-housingsupportenum)
-    - [Animal Assistance](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.13-animalassitanceenum)
-    - [Disability Status](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.14-disabilitystatus)
-    - [Disability Status Level](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/code-directory/cd.dr.15-disabilitystatuslevel)
+    - [Impairment Type](https://schema.spdci.org/extensions/dr/v1/code/ImpairementType.jsonld)
+    - [Impairment Level](https://schema.spdci.org/extensions/dr/v1/code/ImpairmentLevel.jsonld)
+    - [Human Assistance Type](https://schema.spdci.org/extensions/dr/v1/code/HumanAssistanceType.jsonld)
+    - [Support Frequency](https://schema.spdci.org/extensions/dr/v1/code/SupportFrequency.jsonld)   
+    - [Support Status](https://schema.spdci.org/extensions/dr/v1/code/SupportStatusEnum.jsonld)
+    - [Assistive Technology](https://schema.spdci.org/extensions/dr/v1/code/AssistiveTechnologyEnum.jsonld)
+    - [Disability Onset](https://schema.spdci.org/extensions/dr/v1/code/DisabilityOnSet.jsonld)
+    - [Impairment Cause](https://schema.spdci.org/extensions/dr/v1/code/ImpairmentCause.jsonld)
+    - [Transport Requirement](https://schema.spdci.org/extensions/dr/v1/code/TransportRequirement.jsonld)
+    - [Housing Type](https://schema.spdci.org/extensions/dr/v1/code/HousingType.jsonld)
+    - [Medical Care](https://schema.spdci.org/extensions/dr/v1/code/MedicalCareEnum.jsonld)
+    - [Housing Support](https://schema.spdci.org/extensions/dr/v1/code/HousingSupportEnum.jsonld)
+    - [Animal Assistance](https://schema.spdci.org/extensions/dr/v1/code/AnimalAssistanceEnum.jsonld)
+    - [Disability Status](https://schema.spdci.org/extensions/dr/v1/code/DisabilityStatusEnum.jsonld)
+    - [Disability Status Level](https://schema.spdci.org/extensions/dr/v1/code/DisabilityLevelEnum.jsonld)
 
     Data Objects:
-    - [PWDPerson](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/data-objects/do.dr.01-pwdperson)
-    - [Disability Details](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/data-objects/do.dr.02-disabilitydetails)
-    - [Disability Support](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/data-objects/do.dr.03-disabilitysupport)
-    - [Human Assistance](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/data-objects/do.dr.04-humanassistance) 
-    - [Assistive Technology](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/data-objects/do.dr.05-assistivetechnology)
-    - [Medical Care](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/data-objects/do.dr.06-medicalcare)
-    - [Housing Support](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/data-objects/do.dr.07-housingsupport)
-    - [Animal Assistance](https://standards.spdci.org/standards/wip-disability-registry/disability-registry-and-sp-systems-interface/1.-crvs/data/data-objects/do.dr.08-animalassistance)
-    - [Member](https://standards.spdci.org/standards/v/wip-social-registry-v1.0.0/social-registry/1.-crvs/data/data-objects/do.sr.03-member)
+    - [DRPerson](https://schema.spdci.org/extensions/dr/v1/data/DRPerson.jsonld)
+    - [PWDPerson](https://schema.spdci.org/extensions/dr/v1/data/PWDPerson.jsonld)
+    - [Disability Details](https://schema.spdci.org/extensions/dr/v1/data/DisabilityDetails.jsonld)
+    - [Disability Support](https://schema.spdci.org/extensions/dr/v1/data/DisabilitySupport.jsonld)
+    - [Human Assistance](https://schema.spdci.org/extensions/dr/v1/data/HumanAssistance.jsonld) 
+    - [Assistive Technology](https://schema.spdci.org/extensions/dr/v1/data/AssistiveTechnology.jsonld)
+    - [Medical Care](https://schema.spdci.org/extensions/dr/v1/data/MedicalCare.jsonld)
+    - [Housing Support](https://schema.spdci.org/extensions/dr/v1/data/HousingSupport.jsonld)
+    - [Animal Assistance](https://schema.spdci.org/extensions/dr/v1/data/AnimalAssistance.jsonld)
+    - [Member](https://schema.spdci.org/extensions/dr/v1/data/Member.jsonld)
 
 
 
@@ -318,7 +319,7 @@ paths:
                   $ref: "#/components/schemas/MsgSignature"
                 header:
                   allOf:
-                    - $ref: "#/components/schemas/MsgHeader_V1.0.0"
+                    - $ref: "#/components/schemas/MsgCallbackHeader_V1.0.0"
                     - properties:
                         action:
                           enum:
@@ -476,7 +477,7 @@ paths:
                   $ref: "#/components/schemas/MsgSignature"
                 header:
                   allOf:
-                    - $ref: "#/components/schemas/MsgHeader_V1.0.0"
+                    - $ref: "#/components/schemas/MsgCallbackHeader_V1.0.0"
                     - properties:
                         action:
                           enum:
@@ -708,7 +709,7 @@ paths:
                     - properties:
                         action:
                           enum:
-                            - search
+                            - get-disability-support
                 message:
                   type: object
                   description: The search data using which registry search to be performed
@@ -718,14 +719,6 @@ paths:
               required:
                 - header
                 - message
-        multipart/form-data:
-          schema:
-            allOf:
-              - $ref: "#/components/schemas/FileInfo"
-              - properties:
-                  action:
-                    enum:
-                      - search
     responses:
         default:
           description: "support response"
@@ -742,7 +735,7 @@ paths:
                       - properties:
                           action:
                             enum:
-                              - on-search
+                              - on-get-disability-support
                   message:
                     type: object
                     oneOf:
@@ -756,6 +749,8 @@ paths:
           $ref: "#/components/responses/HttpErrorResponse"
         '500':
           $ref: "#/components/responses/HttpErrorResponse"
+    security:
+      - Authorization: [ ]
     deprecated: false
 
  /registry/sync/get-disability-details:
@@ -782,7 +777,7 @@ paths:
                     - properties:
                         action:
                           enum:
-                            - search
+                            - get-disability-details
                 message:
                   type: object
                   description: The search data using which registry search to be performed
@@ -792,14 +787,6 @@ paths:
               required:
                 - header
                 - message
-        multipart/form-data:
-          schema:
-            allOf:
-              - $ref: "#/components/schemas/FileInfo"
-              - properties:
-                  action:
-                    enum:
-                      - search
     responses:
         default:
           description: "support response"
@@ -816,7 +803,7 @@ paths:
                       - properties:
                           action:
                             enum:
-                              - on-search
+                              - on-get-disability-details
                   message:
                     type: object
                     oneOf:
@@ -830,11 +817,13 @@ paths:
           $ref: "#/components/responses/HttpErrorResponse"
         '500':
           $ref: "#/components/responses/HttpErrorResponse"
+    security:
+      - Authorization: [ ]
     deprecated: false
 
  /registry/sync/disabled:
   post: 
-    summary: "/registry/sync/get-disability-status"
+    summary: "/registry/sync/disabled"
     description: |- 
       check if member is registered as disabled
     operationId: post_reg_disabled
@@ -856,7 +845,7 @@ paths:
                     - properties:
                         action:
                           enum:
-                            - search
+                            - disabled
                 message:
                   type: object
                   description: The search data using which registry search to be performed
@@ -866,14 +855,6 @@ paths:
               required:
                 - header
                 - message
-        multipart/form-data:
-          schema:
-            allOf:
-              - $ref: "#/components/schemas/FileInfo"
-              - properties:
-                  action:
-                    enum:
-                      - search
     responses:
         default:
           description: "support response"
@@ -890,7 +871,7 @@ paths:
                       - properties:
                           action:
                             enum:
-                              - on-search
+                              - on-disabled
                   message:
                     type: object
                     oneOf:
@@ -904,8 +885,76 @@ paths:
           $ref: "#/components/responses/HttpErrorResponse"
         '500':
           $ref: "#/components/responses/HttpErrorResponse"
+    security:
+      - Authorization: [ ]
     deprecated: false
 
+ /registry/sync/txn/status:
+  post: 
+    summary: "/registry/sync/txn/status"
+    description: |-
+      The /registry/sync/txn/status will be implemented by DR. This will check status of reach request using transaction_id and/or reference_id(s).
+    operationId: post_reg_sync_txnstatus
+    tags: 
+      -  Sync
+    requestBody:
+      description: ""
+      required: true
+      content:
+        application/json:
+          schema:
+              type: object
+              properties:
+                signature:  
+                  $ref: "#/components/schemas/MsgSignature"
+                header:
+                  allOf:
+                    - $ref: "#/components/schemas/MsgHeader_V1.0.0"
+                    - properties:
+                        action:
+                          enum:
+                            - txn-status
+                message:
+                  type: object
+                  oneOf:
+                    - $ref: '#/components/schemas/TxnStatusRequest'
+                    - $ref: '#/components/schemas/EncryptedMessage'
+              required:
+                - header
+                - message
+    responses:
+        default:
+          description: "Transaction status check response"
+          content:
+            application/json:
+              schema:
+                  type: object
+                  properties:
+                    signature:  
+                      $ref: "#/components/schemas/MsgSignature"
+                    header:
+                      allOf:
+                        - $ref: "#/components/schemas/MsgCallbackHeader_V1.0.0"
+                        - properties:
+                            action:
+                              enum:
+                                - txn-on-status
+                    message:
+                      type: object
+                      oneOf:
+                        - $ref: '#/components/schemas/TxnStatusResponse'
+                        - $ref: '#/components/schemas/EncryptedMessage'
+                  required:
+                    - header
+        '401':
+          $ref: "#/components/responses/HttpErrorResponse"
+        '403':
+          $ref: "#/components/responses/HttpErrorResponse"
+        '500':
+          $ref: "#/components/responses/HttpErrorResponse"
+    security:
+      - Authorization: [ ]
+    deprecated: false
 components:
   schemas:
 

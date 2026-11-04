@@ -1,88 +1,91 @@
 {
-  "signature": "Signature:  namespace=\"dci\", kidId=\"{sender_id}|{unique_key_id}|{algorithm}\", algorithm=\"ed25519\", created=\"1606970629\", expires=\"1607030629\", headers=\"(created) (expires) digest\", signature=\"Base64(signing content)",
-  "header": {
-    "version": "1.0.0",
-    "message_id": "0c96614c-7255-4774-b109-cd53ee851769",
-    "message_ts": "2023-07-19T12:15:04.555Z",
-    "action": "register",
-    "sender_id": "SP-System",
-    "sender_uri": "",
-    "receiver_id": "IBR",
-    "total_count": "1",
-    "is_msg_encrypted": false,
-    "meta": ""
-  },
-  "message": {
-    "transaction_id": "",
-    "receipt_information": {
-      "receipt_type": "enrollment",
-      "beneficiaries": [
-        {
-          "@context": {
-            "@vocab": "https://schema.spdci.org/extensions/ibr/v1",
-            "xsd": "http://www.w3.org/2001/XMLSchema#",
-            "schema": "http://schema.org/",
-            "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-            "owl": "http://www.w3.org/2002/07/owl#"
-          },
-          "@id": "Beneficiary",
-          "@type": "Beneficiary",
-          "assistance_unit": "1",
-          "member": {
-            "member_identifier": [ {
-              "identifier_type": "NID",
-              "identifier_value": "0205202401"
-          }],
-            "demographic_info": {
-              "person": {
-                "identifier":[ {
-                  "identifier_type": "NID",
-                  "identifier_value": "0205202401"
-                }],
-                "name": {
-                "first_name": "Test",
-                "second_name": "Test2",
-                "surname": "Test3"
-              },
-            "sex": "F",
-            "birth_date": "1980-04-12T00:00",
-            "death_date": "",
-            "address": "",
-            "phone_number": "",
-            "email": ""
-            }
-          },
-          "relationship_head": "",
-          "related_person": "",
-          "is_disabled": "0",
-          "disability_info": "",
-          "marital_status": "Single",
-          "employment_status": "employed",
-          "occupation": "Caregiver",
-          "income_level": "",
-          "language_code": "Eng",
-          "education_level": "Highschool",
-          "additional_attributes": "",
-          "registration_date": "2024-04-12T00:00",
-          "last_update": "",
-          "programme_identifier": {
-          "programme": {
-            "programme_identifier": "DCI001",
-            "programme_name": "Test Programme"
-          },
-          "enrolment_date": "2024-04-12T00:00",
-          "enrolment_status": "Active",
-          "status_change_date": "",
-          "benefits": {
-            "benefit_type": "Cash",
-            "benefit_date": "02.05.2024",
-            "benefit_value": "USD 50",
-            "benefit_frequency": "Monthly"
-          }
-          }
-          }
-          }
-        ]
+    "signature": "Signature:  namespace=\"dci\", kidId=\"{sender_id}|{unique_key_id}|{algorithm}\", algorithm=\"ed25519\", created=\"1606970629\", expires=\"1607030629\", headers=\"(created) (expires) digest\", signature=\"Base64(signing content)",
+    "header": {
+        "version": "1.0.0",
+        "message_id": "0c96614c-7255-4774-b109-cd53ee851769",
+        "message_ts": "2023-07-19T12:15:04.555Z",
+        "action": "enrollment-updates",
+        "sender_id": "SP-System",
+        "receiver_id": "IBR",
+        "total_count": 1,
+        "is_msg_encrypted": false,
+        "meta": {}
+    },
+    "message": {
+        "transaction_id": "TXN-IBR-ENR-001",
+        "enrolled_updates": {
+            "receipt_type": "enrollment",
+            "beneficiaries": [
+                {
+                    "@context": {
+                        "@vocab": "https://schema.spdci.org/extensions/ibr/v1",
+                        "xsd": "http://www.w3.org/2001/XMLSchema#",
+                        "schema": "http://schema.org/",
+                        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+                        "owl": "http://www.w3.org/2002/07/owl#"
+                    },
+                    "@id": "Beneficiary",
+                    "@type": "Beneficiary",
+                    "assistance_unit": "1",
+                    "member": {
+                        "member_identifier": [
+                            {
+                                "identifier_type": "NID",
+                                "identifier_value": "0205202401"
+                            }
+                        ],
+                        "demographic_info": {
+                            "person": {
+                                "identifier": [
+                                    {
+                                        "identifier_type": "NID",
+                                        "identifier_value": "0205202401"
+                                    }
+                                ],
+                                "name": {
+                                    "first_name": "Test",
+                                    "second_name": "Test2",
+                                    "surname": "Test3"
+                                },
+                                "sex": "F",
+                                "birth_date": "1980-04-12T00:00",
+                                "death_date": "",
+                                "address": "",
+                                "phone_number": "",
+                                "email": ""
+                            }
+                        },
+                        "relationship_head": "",
+                        "related_person": "",
+                        "is_disabled": "0",
+                        "disability_info": "",
+                        "marital_status": "Single",
+                        "employment_status": "employed",
+                        "occupation": "Caregiver",
+                        "income_level": "",
+                        "language_code": "Eng",
+                        "education_level": "Highschool",
+                        "additional_attributes": "",
+                        "registration_date": "2024-04-12T00:00",
+                        "last_update": "",
+                        "programme_identifier": {
+                            "programme": {
+                                "programme_identifier": "DCI001",
+                                "programme_name": "Test Programme"
+                            },
+                            "enrolment_date": "2024-04-12T00:00",
+                            "enrolment_status": "Active",
+                            "status_change_date": "",
+                            "benefits": {
+                                "benefit_type": "Cash",
+                                "benefit_date": "02.05.2024",
+                                "benefit_value": "USD 50",
+                                "benefit_frequency": "Monthly"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
     }
-  }
 }
