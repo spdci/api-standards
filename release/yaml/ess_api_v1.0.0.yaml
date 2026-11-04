@@ -18,15 +18,15 @@ info:
     - [ESS - V1.0 ](https://standards.spdci.org/standards/dci-standards/employment-support-systems)
 
     Code directory links:
-    - [Employment Type](https://standards.spdci.org/standards/dci-standards/employment-support-systems/employment-support-systems-and-sp-system-interface/1.-crvs/data/code-directory/cd.emp.01-employment_type)
-    - [Enrollment Status](https://standards.spdci.org/standards/dci-standards/employment-support-systems/employment-support-systems-and-sp-system-interface/1.-crvs/data/code-directory/cd.emp.03-enrolment_status)
-    - [Unemployment Reason](https://standards.spdci.org/standards/dci-standards/employment-support-systems/employment-support-systems-and-sp-system-interface/1.-crvs/data/code-directory/cd.emp.02-unemployment_reason)
+    - [Employment Type](https://schema.spdci.org/extensions/ess/v1/code/EmploymentType.jsonld)
+    - [Enrollment Status](https://schema.spdci.org/extensions/ess/v1/code/EnrolmentStatus.jsonld)
+    - [Unemployment Reason](https://schema.spdci.org/extensions/ess/v1/code/UnemploymentReason.jsonld)
 
     Data Objects:
-    - [Person](https://standards.spdci.org/standards/dci-standards/employment-support-systems/employment-support-systems-and-sp-system-interface/1.-crvs/data/data-object/do.emp.01-person)
-    - [Member](https://standards.spdci.org/standards/dci-standards/employment-support-systems/employment-support-systems-and-sp-system-interface/1.-crvs/data/data-object/do.emp.02-member)
-    - [Group](https://standards.spdci.org/standards/dci-standards/employment-support-systems/employment-support-systems-and-sp-system-interface/1.-crvs/data/data-object/do.emp.03-group)
-    - [Employment Info](https://standards.spdci.org/standards/dci-standards/employment-support-systems/employment-support-systems-and-sp-system-interface/1.-crvs/data/data-object/do.emp.04-employment_info)
+    - [Person](https://schema.spdci.org/extensions/ess/v1/data/ESSPerson.jsonld)
+    - [Member](https://schema.spdci.org/extensions/ess/v1/data/Member.jsonld)
+    - [Group](https://schema.spdci.org/extensions/ess/v1/data/Group.jsonld)
+    - [Employment Info](https://schema.spdci.org/extensions/ess/v1/data/EmploymentInfo.jsonld)
 
 
     Each request is build up of three parts 

@@ -46,8 +46,8 @@ This project follows [semantic versioning](https://semver.org/).
 | 🟡 **Updated**  | ESS response codes | `'200'` → `default`, consistent with other APIs | Documentation only; HTTP status unchanged |
 | 🟡 **Updated**  | `schema.spdci.org` links | `@context` links updated to existing `spdci/schemas` paths (`/data/`, `/code/`, `common/v1/api-schemas/`); DR `DisabledPerson` → `PWDPerson`; IBR `GroupTypeEnum` → `core/v1/code/AssistanceUnit` | `extensions/ibr/v1/DisbursementInfo.jsonld` still has no schema |
 | 🟡 **Updated**  | `standards.spdci.org` links | Updated to current `/standards/dci-standards/...` pages and section numbers; release links in `release/index.md` point to `spdci.github.io/api-standards` | |
-| 🟡 **Updated**  | ESS GitBook links | Filled the empty GitBook, code directory and data object links in the ESS API description; added the Person data object | |
-| 🟡 **Updated**  | GitBook links in Core, DR, FR, IBR | Core links to Common Standards for Interoperability Interfaces instead of the site home; DR, FR and IBR Member and Group link to their own data objects instead of the Social Registry's; DR label for CD.DR.07 corrected to Disability Onset; added each domain's Person data object | |
+| 🟡 **Updated**  | ESS links | Filled the empty GitBook link (main ESS page) and the code directory and data object links (schema.spdci.org); added the Person data object | |
+| 🟡 **Updated**  | Code directory and data object links (DR, FR, IBR, ESS) | Point to the `schema.spdci.org` JSON-LD files, like Core, CRVS and Social; each API keeps only its main GitBook link. Core GitBook link now goes to Common Standards for Interoperability Interfaces; added each domain's Person data object; DR CD.DR.07 label corrected to Disability Onset | |
 | 🟡 **Updated**  | `build/build_apis.cmd`, `redocly.yaml` | Build now covers CRVS, DR, FR, ESS; `assert/` rule renamed to `rule/` | |
 
 ## [1.0.0] – 2025-09-19

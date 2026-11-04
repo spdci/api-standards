@@ -19,23 +19,23 @@ info:
     - [Integrated Beneficiary Registry - V1.0 ](https://standards.spdci.org/standards/dci-standards/wip-integrated-beneficiary-registry-v1.0.0)
 
     Code directory links:
-    - [Assistance Unit](https://standards.spdci.org/standards/dci-standards/wip-integrated-beneficiary-registry-v1.0.0/ibr/1.-crvs/data/code-directory/cd.ibr.01-assistance_unit)
-    - [Enrollment Status](https://standards.spdci.org/standards/dci-standards/wip-integrated-beneficiary-registry-v1.0.0/ibr/1.-crvs/data/code-directory/cd.ibr.01-enrolment_status)
-    - [Benefit Type](https://standards.spdci.org/standards/dci-standards/wip-integrated-beneficiary-registry-v1.0.0/ibr/1.-crvs/data/code-directory/cd.ibr.02-benefit_type)
-    - [Institution Type](https://standards.spdci.org/standards/dci-standards/wip-integrated-beneficiary-registry-v1.0.0/ibr/1.-crvs/data/code-directory/cd.ibr.03-institution_type)   
-    - [Legal Status](https://standards.spdci.org/standards/dci-standards/wip-integrated-beneficiary-registry-v1.0.0/ibr/1.-crvs/data/code-directory/cd.ibr.04-legal_status)
-    - [Social Protection Functions](https://standards.spdci.org/standards/dci-standards/wip-integrated-beneficiary-registry-v1.0.0/ibr/1.-crvs/data/code-directory/cd.ibr.05-social_protection_functions)
-    - [Contribution Type](https://standards.spdci.org/standards/dci-standards/wip-integrated-beneficiary-registry-v1.0.0/ibr/1.-crvs/data/code-directory/cd.ibr.06-contribution_type)
-    - [Programme Type](https://standards.spdci.org/standards/dci-standards/wip-integrated-beneficiary-registry-v1.0.0/ibr/1.-crvs/data/code-directory/cd.ibr.07-programme_type)
+    - [Assistance Unit](https://schema.spdci.org/core/v1/code/AssistanceUnit.jsonld)
+    - [Enrollment Status](https://schema.spdci.org/extensions/ibr/v1/code/EnrollmentStatusEnum.jsonld)
+    - [Benefit Type](https://schema.spdci.org/extensions/ibr/v1/code/BenefitTypeEnum.jsonld)
+    - [Institution Type](https://schema.spdci.org/extensions/ibr/v1/code/InstitutionEnum.jsonld)   
+    - [Legal Status](https://schema.spdci.org/extensions/ibr/v1/code/LegalStatusEnum.jsonld)
+    - [Social Protection Functions](https://schema.spdci.org/extensions/ibr/v1/code/SocialProtectionFunctionEnum.jsonld)
+    - [Contribution Type](https://schema.spdci.org/extensions/ibr/v1/code/ContributionTypeEnum.jsonld)
+    - [Programme Type](https://schema.spdci.org/extensions/ibr/v1/code/ProgrammeTypeEnum.jsonld)
 
     Data Objects:
-    - [Person](https://standards.spdci.org/standards/dci-standards/wip-integrated-beneficiary-registry-v1.0.0/ibr/1.-crvs/data/data-objects/do.ibr.01-person)
-    - [Beneficiary](https://standards.spdci.org/standards/dci-standards/wip-integrated-beneficiary-registry-v1.0.0/ibr/1.-crvs/data/data-objects/do.ibr.04-beneficiary)
-    - [Programme](https://standards.spdci.org/standards/dci-standards/wip-integrated-beneficiary-registry-v1.0.0/ibr/1.-crvs/data/data-objects/do.ibr.02-programme)
-    - [Benefit](https://standards.spdci.org/standards/dci-standards/wip-integrated-beneficiary-registry-v1.0.0/ibr/1.-crvs/data/data-objects/do.ibr.03-benefit)
-    - [Benefit Frequency](https://standards.spdci.org/standards/dci-standards/wip-integrated-beneficiary-registry-v1.0.0/ibr/1.-crvs/data/data-objects/do.ibr.o4-benefit-frequency) 
-    - [Group](https://standards.spdci.org/standards/dci-standards/wip-integrated-beneficiary-registry-v1.0.0/ibr/1.-crvs/data/data-objects/do.ibr.03-group)
-    - [Member](https://standards.spdci.org/standards/dci-standards/wip-integrated-beneficiary-registry-v1.0.0/ibr/1.-crvs/data/data-objects/do.ibr.02-member)
+    - [Person](https://schema.spdci.org/extensions/ibr/v1/data/IBRPerson.jsonld)
+    - [Beneficiary](https://schema.spdci.org/extensions/ibr/v1/data/Beneficiary.jsonld)
+    - [Programme](https://schema.spdci.org/extensions/ibr/v1/data/Programme.jsonld)
+    - [Benefit](https://schema.spdci.org/extensions/ibr/v1/data/Benefit.jsonld)
+    - [Benefit Frequency](https://schema.spdci.org/extensions/ibr/v1/code/BenefitFrequency.jsonld) 
+    - [Group](https://schema.spdci.org/extensions/ibr/v1/data/Group.jsonld)
+    - [Member](https://schema.spdci.org/extensions/ibr/v1/data/Member.jsonld)
 
 
     Each request is build up of three parts 
