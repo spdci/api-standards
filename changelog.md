@@ -46,6 +46,7 @@ This project follows [semantic versioning](https://semver.org/).
 | 🟡 **Updated**  | ESS response codes | `'200'` → `default`, consistent with other APIs | Documentation only; HTTP status unchanged |
 | 🟡 **Updated**  | `schema.spdci.org` links | `@context` links updated to existing `spdci/schemas` paths (`/data/`, `/code/`, `common/v1/api-schemas/`); DR `DisabledPerson` → `PWDPerson`; IBR `GroupTypeEnum` → `core/v1/code/AssistanceUnit` | `extensions/ibr/v1/DisbursementInfo.jsonld` still has no schema |
 | 🟡 **Updated**  | `standards.spdci.org` links | Updated to current `/standards/dci-standards/...` pages and section numbers; release links in `release/index.md` point to `spdci.github.io/api-standards` | |
+| 🟡 **Updated**  | ESS GitBook links | Filled the empty GitBook, code directory and data object links in the ESS API description; added the Person data object | |
 | 🟡 **Updated**  | `build/build_apis.cmd`, `redocly.yaml` | Build now covers CRVS, DR, FR, ESS; `assert/` rule renamed to `rule/` | |
 
 ## [1.0.0] – 2025-09-19

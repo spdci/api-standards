@@ -15,17 +15,18 @@ info:
     3. checkEnrolment : the check-enrolled API is a special type of search to return the enrolment status , can be executed from SP to ESS or vice versa
 
     Gitbook reference link[WIP]:
-    - [ESS - V1.0 ]()
+    - [ESS - V1.0 ](https://standards.spdci.org/standards/dci-standards/employment-support-systems)
 
     Code directory links:
-    - [Employment Type]()
-    - [Enrollment Status]()
-    - [Umemployment Reason]()
+    - [Employment Type](https://standards.spdci.org/standards/dci-standards/employment-support-systems/employment-support-systems-and-sp-system-interface/1.-crvs/data/code-directory/cd.emp.01-employment_type)
+    - [Enrollment Status](https://standards.spdci.org/standards/dci-standards/employment-support-systems/employment-support-systems-and-sp-system-interface/1.-crvs/data/code-directory/cd.emp.03-enrolment_status)
+    - [Unemployment Reason](https://standards.spdci.org/standards/dci-standards/employment-support-systems/employment-support-systems-and-sp-system-interface/1.-crvs/data/code-directory/cd.emp.02-unemployment_reason)
 
     Data Objects:
-    - [Employment Info]()
-    - [Group]()
-    - [Member]()
+    - [Person](https://standards.spdci.org/standards/dci-standards/employment-support-systems/employment-support-systems-and-sp-system-interface/1.-crvs/data/data-object/do.emp.01-person)
+    - [Member](https://standards.spdci.org/standards/dci-standards/employment-support-systems/employment-support-systems-and-sp-system-interface/1.-crvs/data/data-object/do.emp.02-member)
+    - [Group](https://standards.spdci.org/standards/dci-standards/employment-support-systems/employment-support-systems-and-sp-system-interface/1.-crvs/data/data-object/do.emp.03-group)
+    - [Employment Info](https://standards.spdci.org/standards/dci-standards/employment-support-systems/employment-support-systems-and-sp-system-interface/1.-crvs/data/data-object/do.emp.04-employment_info)
 
 
     Each request is build up of three parts 
